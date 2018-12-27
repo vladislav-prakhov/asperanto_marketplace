@@ -121,11 +121,12 @@ h1, h2, h3, h4, h5, h6, a {
 
 .search_width {
     display: flex;
+    flex-grow: 0 !important;
     width: 50% !important;
 }
 
-.arrange {
-    width: auto !important;
+.dropright .dropdown-toggle::after {
+    display: none;
 }
 
 @media (max-width: 1200px) {
@@ -138,12 +139,9 @@ h1, h2, h3, h4, h5, h6, a {
 }
 
 @media (max-width: 767px) {
-    .arrange {
-        width: 100% !important;
-    }
-
     .search_width {
-        display: none;
+        display: flex;
+        flex-grow: 1 !important;
     }
 
     .height-mobile-desktop {
