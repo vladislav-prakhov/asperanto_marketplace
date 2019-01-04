@@ -1,9 +1,11 @@
 html,
-body {
+body { /* Использование шрифта, обозначение основного цвета заднего фона*/
     height: 100%;
     background-color: #c5c5c5;
     font-family: 'IBM Plex Sans', sans-serif;
 }
+
+/* Оба правила переписывают поведение тегов <a>, <button> под нейтральное*/
 
 button,
 a {
@@ -19,23 +21,25 @@ a:hover {
     display: flex;
 }
 
+/* Тоже переписывание поведения тегов */
+
 h1, h2, h3, h4, h5, h6, a {
     padding: 0;
     margin: 0;
     color: #343a40
 }
 
-.page-container {
+.page-container { /* Обозначаем свойства расположения объектов в основной части страницы (т.е. исключая навбар) */
     display: flex;
     flex-direction: row;
     height: 100%;
 }
 
-.nav-icons {
+.nav-icons { /* Нормально отображает подгруженные с font-awesome иконки в навбаре */
     font-size: 1.7rem;
 }
 
-.circle-nav {
+.circle-nav { /* Временный класс, сейчас рисует красный кружок около имени пользователя, должен быть подгруженный аватар */
     border: 2px solid #343a40;
     border-radius: 32px;
     background-color: red;
@@ -44,12 +48,18 @@ h1, h2, h3, h4, h5, h6, a {
     display: inline-block;
 }
 
-.nickname-nav {
+.nickname-nav { /* Красиво отображет имя пользователя */
     margin-top: 0.2rem;
     font-weight: bold;
 }
 
-.left-bar {
+.search_width { /* Отражает поведение поисковой строки */
+    display: flex;
+    flex-grow: 0 !important;
+    width: 50% !important;
+}
+
+.left-bar { /* Основные настройки левой панели */
     display: flex;
     background-color: #f8f9fa !important;
     border-top: 1px solid rgba(0,0,0,.1);
@@ -59,19 +69,20 @@ h1, h2, h3, h4, h5, h6, a {
     padding: 0 0 0 0;
 }
 
-.left-bar > div > a {
+.left-bar > div > a { /* Поскольку каждый заголовок в левой части является триггером для вызова collapse менюшки,
+                        эти заголовки должны быть тегом <a>, а сами менюшки все заключены в свой <div>. Отсюда и правило этих заголовков */
     font-size: 1.1rem;
     margin-bottom: 0.65rem;
 }
 
-.left-bar-categories {
+.left-bar-menus { /* Описание общих свойств блоков */
     padding: 0.8rem 0 0 1rem !important;
     width: 100%;
     height: auto;
     border-bottom: 1px solid rgba(0,0,0,.1);
 }
 
-.category-items {
+.category-items { /* Правило для блока, в котором находится название категории и стрелочка */
     display: flex;
     -ms-flex-pack: justify !important;
     justify-content: space-between !important;
@@ -79,22 +90,17 @@ h1, h2, h3, h4, h5, h6, a {
     align-items: center;
 }
 
-.category-name {
+.category-name { /* Правило для текста в блоке категорий */
     width: 85%;
     line-height: 1.1rem;
     font-size: 0.84rem;
 }
 
-.category-arrow-left {
+.category-arrow-left { /* Правило для стрелочки */
     margin-right: 0.5rem;
 }
 
-.counteragents {
-    padding: 0.8rem 0 0 1rem !important;
-    border-bottom: 1px solid rgba(0,0,0,.1);
-}
-
-.main {
+.main { /* Правило для правой части страницы */
     border-top: 1px solid rgba(0,0,0,.1);
     border-left: 1px solid rgba(0,0,0,.1);
     padding-right: 0;
@@ -102,17 +108,11 @@ h1, h2, h3, h4, h5, h6, a {
     width: 100%;
 }
 
-.search_width {
-    display: flex;
-    flex-grow: 0 !important;
-    width: 50% !important;
-}
-
-.dropright .dropdown-toggle::after {
+.dropright .dropdown-toggle::after { /* Чиним поведение стрелочек в бутстрепе */
     display: none;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 767px) { /* Изменение поведения некоторых правил для мобилок */
     .search_width {
         display: flex;
         flex-grow: 1 !important;
@@ -124,7 +124,7 @@ h1, h2, h3, h4, h5, h6, a {
     }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) { /* Правило только для десктоп версии */
     .left-bar-desktop {
         display: flex !important;
         height: 100% !important;

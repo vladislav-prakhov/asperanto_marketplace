@@ -1,18 +1,18 @@
-.arrow-back {
+.arrow-back { /* Большая стрелочка слева */
     display: block;
     margin-top:1rem;
     width: 40px;
     margin-left: 1rem;
 }
 
-.products {
+.products { /* Блок под все товары (карточки с товарами) */
     margin-left: 2rem;
     margin-right: 2rem;
     display: inline-block;
     width: 100%;
 }
 
-.product-window {
+.product-window { /* Непосредственно правило для карточки */
     width: 100%;
     padding: 1rem 1.5rem 1rem 1.5rem;
     border: 3px solid #343a40;
@@ -24,49 +24,38 @@
     position: relative;
 }
 
-.picture-product {
+.picture-product { /* Класс, который определяет поведение блока, хранящий картинку */
     position: relative;
     display: inline-block;
 }
 
-.picture-product img {
+.picture-product img { /* Размер основной картинки */
     width: 200px;
     height: 200px;
 }
 
-.picture-product div {
-    margin-top: 0.5rem;
-    display: none;
-}
-
-.picture-product div i{
-    margin-left: 0.3rem;
-}
-
-.picture-product div a {
-    font-weight: bold;
-    font-size: 1rem;
-}
-
-.other-pics-product {
+.other-pics-product { /* Правило, описывающее поведение блока, хранящего маленькие дополнительные картинки */
     margin-top: 0.6rem;
 }
 
-.other-pics-product img {
+.other-pics-product img { /* Размер дополнительных картинок */
     height: 32px;
     width: 32px;
 }
 
-.product-meta {
+.product-meta { /* Блок, в котором находятся название товара, цена, поставщик (мета информация),
+                    также ссылки (либо "подробнее..." либо "написать контрагенту" и блок с дополнительными картинками */
     display: inline-block;
     margin-right: 1rem;
     margin-left: 1rem;
     line-height: 1.2rem;
 }
 
-.product-meta .picture-product {
+.product-meta .picture-product { /* На мобилках отображение карточки выглядит иначе, поскольку по другому идет разметка. Это правило скрывает теги, которые используются в мобилках */
     display: none;
 }
+
+/* Описание правил для текста в мета информации */
 
 .product-meta h5 {
     margin-bottom: 0.4rem;
@@ -86,33 +75,22 @@
     margin-right: 0.5rem;
 }
 
-.product-meta .product-headers a {
+.product-price {
+    color: rgb(255, 165, 56);
+}
+
+.product-meta .product-headers a { /* Тоже мобилки */
     display: none;
 }
 
-.product-desc p {
+.product-desc p { /* Правило для описания товара */
     width: 100%;
     display: block;
     overflow-wrap: break-word;
     margin: 0 0 0 0;
 }
 
-.product-price {
-    color: rgb(255, 165, 56);
-}
-
-.product-filters {
-    background-color: #ddd;
-    width: 250px;
-    margin: 1rem 0 0 1rem;
-    border: 3px solid #343a40;
-    border-radius: 15px;
-    height: auto;
-    padding: 1rem 0.5rem 1rem 0.5rem;
-    display: block;
-}
-
-@media (max-width: 1200px) {
+@media (max-width: 1200px) { /* Все ради узких мониторов */
     .product-meta {
         width: 50%;
     }
@@ -135,7 +113,8 @@
     }
 }
 
-@media (max-width: 526px) {
+@media (max-width: 526px) { /* Тут начинаются правила для новой карточки (мобильной) (связка классов .product-meta .picture-product используется только в
+                                                            мобильной версии (отображает картинку), а просто .picture-product - в десктопах)  */
     .products {
         margin: 0 0 0 0;
     }
@@ -174,7 +153,7 @@
     }
 
     .product-meta > div > a,
-    .product-meta > div > i {
+    .product-meta > div > i { /* Прячем "написать контрагенту" */
         display: none;
     }
 
@@ -186,7 +165,7 @@
         display: none;
     }
 
-    .product-headers {
+    .product-headers { /* Класс для цены, производителя и ссылки "подробнее..." */
         margin-top: 0.5rem;
         display: inline-block;
         overflow-wrap: break-word;

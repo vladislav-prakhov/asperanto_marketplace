@@ -1,27 +1,29 @@
-.main-icons {
+.main-icons { /* Красивое отображение основных иконок */
     font-size: 5rem;
 }
 
-.card-main-menu {
+.card-main-menu { /* Правило для менюшки "текущие контракты" */
     margin-right: 2rem;
     margin-left: 2rem;
     border: 3px solid #343a40;
     background-color: #ddd;
 }
 
-.btn-role {
+.btn-role { /* Определение правил для кнопки смены роли */
     border: 3px solid #343a40;
     border-radius: 0px;
     background-color: #fff;
 }
 
-.btn-icon {
+.btn-icon { /* Правило для иконки в кнопке */
     font-size: 30px;
 }
 
-.btn-text-role {
+.btn-text-role { /* Правило для текста в кнопке */
     font-size: 1.2rem;
 }
+
+/* Улучшаем внешний вид для мобилок */
 
 @media (max-width: 767px) {
     .main-icons {
