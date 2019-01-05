@@ -1,8 +1,6 @@
-.arrow-back { /* Большая стрелочка слева */
-    display: block;
-    margin-top:1rem;
-    width: 40px;
-    margin-left: 1rem;
+.main-goods {
+    display: flex;
+    justify-content: space-between;
 }
 
 .products { /* Блок под все товары (карточки с товарами) */
@@ -10,13 +8,76 @@
     margin-right: 2rem;
     display: inline-block;
     width: 100%;
+    margin-top: 1rem;
+}
+
+.product-filters-mobile {
+    display: none;
+}
+
+.product-filters {
+    width: 380px;
+}
+
+.product-filters > form {
+    display: block;
+    width: 100%;
+    padding: 1rem 1rem 1rem 1rem;
+    margin-top: 1rem;
+    margin-right: 1rem;
+    position: relative;
+    background-color: #d9dadb;
+    border-radius: 15px;
+}
+
+.product-filters > h5 {
+    text-align: left;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.filter-button {
+    border: 0px solid #343a40;
+    border-radius: 0px;
+    background-color: #fff;
+    font-weight: bold;
+    margin-top: 0.5rem;
+}
+
+.filter-price > div {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    margin-bottom: 1rem;
+    margin-top: 0.5rem;
+}
+
+.filter-price div button {
+    border: 0px solid #343a40;
+    border-radius: 0px;
+    background-color: #fff;
+    font-weight: bold;
+}
+
+.filter-price > div > input {
+    border: 0px solid #343a40;
+    border-radius: 25px;
+    background-color: #fff;
+    font-weight: bold;
+}
+
+.filter-countries {
+    font-weight: bold;
+}
+
+.filter-small-mobile {
+    display: none !important;
 }
 
 .product-window { /* Непосредственно правило для карточки */
     width: 100%;
     padding: 1rem 1.5rem 1rem 1.5rem;
-    border: 3px solid #343a40;
-    margin-top: 1rem;
+    border: 0px solid #343a40;
     background-color: #f8f9fa;
     display: flex;
     justify-content: flex-start;
@@ -88,33 +149,137 @@
     display: block;
     overflow-wrap: break-word;
     margin: 0 0 0 0;
+    height: 85%;
+}
+
+.product-desc .product-fav { /* Правило для описания товара */
+    display: block;
+    text-align: right;
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+.product-meta-links {
+    display: flex;
+    align-items: center;
+}
+
+.product-meta .product-fav {
+    display: none;
 }
 
 @media (max-width: 1200px) { /* Все ради узких мониторов */
-    .product-meta {
-        width: 50%;
-    }
-}
-
-@media (max-width: 1040px) {
     .product-window {
         flex-wrap: wrap;
     }
 
-    .picture-product img {
+    .product-desc {
+        margin-top: 0.5rem;
+    }
+
+    .product-fav {
+        display: none !important;
+    }
+
+    .product-meta .product-fav {
+        margin-top: 0.5rem;
+        display: block !important;
+    }
+}
+
+@media (max-width: 1024px) {
+    .filter-category-mobile-icon {
+        font-size: 12px;
+        margin-left: 0.25rem;
+    }
+
+    .main > div {
+        display: block;
+    }
+
+    .products {
+        margin: 0;
+    }
+
+    .product-filters-mobile {
+        display: block;
+        width: 100%;
+        background-color: #f8f9fa;
+        padding: 1rem 1rem 1rem 1.5rem;
+        border-bottom: 1px solid rgba(0, 0, 0, .1);
+    }
+
+    .product-filters-mobile > a {
+        display: inline-flex;
+        align-items: center;
+        margin-right: 2rem;
+    }
+
+    .other-filters-mobile {
+        float: right;
+    }
+
+    .product-filters {
+        display: none;
+    }
+
+    .product-window {
+        flex-wrap: nowrap;
+    }
+
+    .product-desc {
+        margin-top: 0;
+    }
+
+    .product-fav {
+        display: block !important;
+    }
+
+    .product-meta .product-fav {
+        display: none !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .picture-product img { /* Размер основной картинки */
         width: 150px;
         height: 150px;
     }
-}
 
-@media (max-width: 767px) {
-    .arrow-back {
-        display: none;
+    .product-window {
+        flex-wrap: wrap;
+    }
+
+    .product-desc {
+        margin-top: 0.5rem;
+    }
+
+    .product-fav {
+        display: none !important;
+    }
+
+    .product-meta .product-fav {
+        display: block !important;
     }
 }
 
-@media (max-width: 526px) { /* Тут начинаются правила для новой карточки (мобильной) (связка классов .product-meta .picture-product используется только в
-                                                            мобильной версии (отображает картинку), а просто .picture-product - в десктопах)  */
+@media (max-width: 500px) { /* Тут начинаются правила для новой карточки (мобильной) (связка классов .product-meta .picture-product используется только в
+                                                      мобильной версии (отображает картинку), а просто .picture-product - в десктопах)  */
+
+    .product-filters-mobile a:not(filter-small-mobile) {
+        display: none;
+    }
+
+    .filter-small-mobile {
+        text-align: center;
+        display: inline-flex !important;
+        align-items: center;
+    }
+
+    .product-meta .product-fav {
+        display: none !important;
+    }
+
     .products {
         margin: 0 0 0 0;
     }

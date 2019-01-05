@@ -29,10 +29,52 @@ h1, h2, h3, h4, h5, h6, a {
     color: #343a40
 }
 
+p {
+    margin-bottom: 0;
+}
+
 .page-container { /* Обозначаем свойства расположения объектов в основной части страницы (т.е. исключая навбар) */
     display: flex;
     flex-direction: row;
     height: 100%;
+}
+
+.navbar {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
+    background-color: #f8f9fa;
+}
+
+.navbar-left {
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar-left > button {
+    display: none;
+}
+
+.navbar-left > a {
+    display: flex;
+    padding-top: .3125rem;
+    padding-bottom: .3125rem;
+    margin-right: 1rem;
+    font-size: 1.25rem;
+    white-space: nowrap;
+}
+
+.navbar-right {
+    display: flex;
+    margin-right: 0.5rem;
 }
 
 .nav-icons { /* Нормально отображает подгруженные с font-awesome иконки в навбаре */
@@ -46,6 +88,7 @@ h1, h2, h3, h4, h5, h6, a {
     height: 32px;
     width: 32px;
     display: inline-block;
+    margin-right: 0.5rem;
 }
 
 .nickname-nav { /* Красиво отображет имя пользователя */
@@ -59,10 +102,30 @@ h1, h2, h3, h4, h5, h6, a {
     width: 50% !important;
 }
 
+.search_width > form {
+    display: flex;
+    width: 100%;
+
+}
+
+.search_width > form > input {
+    display: inline-block;
+    width: 100%;
+    border: 1px solid rgba(0, 0, 0, .1);
+    border-radius: 8px;
+    padding: 0.4rem 0 0.4rem 0.6rem;
+}
+
+.search_width > form > button {
+    display: flex;
+    background-color: #f8f9fa;
+    border: 0;
+    margin-right: 0.25rem;
+}
+
 .left-bar { /* Основные настройки левой панели */
     display: flex;
     background-color: #f8f9fa !important;
-    border-top: 1px solid rgba(0,0,0,.1);
     border-right: 1px solid rgba(0,0,0,.1);
     flex-direction: column;
     -ms-flex-direction: column;
@@ -76,10 +139,15 @@ h1, h2, h3, h4, h5, h6, a {
 }
 
 .left-bar-menus { /* Описание общих свойств блоков */
+    display: block;
     padding: 0.8rem 0 0 1rem !important;
     width: 100%;
     height: auto;
     border-bottom: 1px solid rgba(0,0,0,.1);
+}
+
+.left-bar-menus > a > i {
+    margin-left: 0.5rem;
 }
 
 .category-items { /* Правило для блока, в котором находится название категории и стрелочка */
@@ -101,8 +169,8 @@ h1, h2, h3, h4, h5, h6, a {
 }
 
 .main { /* Правило для правой части страницы */
-    border-top: 1px solid rgba(0,0,0,.1);
-    border-left: 1px solid rgba(0,0,0,.1);
+    display: block;
+    position: relative;
     padding-right: 0;
     padding-left: 0;
     width: 100%;
@@ -112,19 +180,42 @@ h1, h2, h3, h4, h5, h6, a {
     display: none;
 }
 
-@media (max-width: 767px) { /* Изменение поведения некоторых правил для мобилок */
+@media (max-width: 1024px) { /* Изменение поведения некоторых правил для мобилок */
     .search_width {
         display: flex;
         flex-grow: 1 !important;
+    }
+
+    .search_width > form > button {
+        display: none;
     }
 
     .page-container {
         height: auto;
         flex-direction: column;
     }
+
+    .navbar-left > button {
+        display: flex;
+        background-color: #f8f9fa;
+        border: 0;
+        margin-right: 0.75rem;
+    }
+
+    .navbar-left > a {
+        display: none;
+    }
+
+    .navbar-right {
+        display: none;
+    }
+
+    .left-bar-menus {
+        display: none;
+    }
 }
 
-@media (min-width: 768px) { /* Правило только для десктоп версии */
+@media (min-width: 1025px) { /* Правило только для десктоп версии */
     .left-bar-desktop {
         display: flex !important;
         height: 100% !important;

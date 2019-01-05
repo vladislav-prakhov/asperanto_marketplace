@@ -16,27 +16,27 @@
     <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans|Roboto+Condensed" rel="stylesheet">
 </head>
 <body>
-    <header class="navbar bg-light py-2">
-        <div class="d-flex justify-content-between">
-            <button class="d-flex d-md-none btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#fastFunc">
-                <i class="text-dark fas fa-bars nav-icons"></i>
+    <header class="navbar">
+        <div class="navbar-left">
+            <button class="collapsed" type="button" data-toggle="collapse" data-target="#fastFunc">
+                <i class="fas fa-bars nav-icons"></i>
             </button>
 
-            <a class="navbar-brand text-dark d-none d-md-flex" href="#">
+            <a href="#">
                 Asperanto
             </a>
         </div>
 
         <div class="search_width">
-            <form class="form-inline d-flex w-100" action="" method="get">
-                <input type="search" placeholder="Найти" class="form-control d-inline-block flex-grow-1">
-                <button type="button" class="btn btn-light d-none d-md-flex"><i class="fas fa-search nav-icons"></i></button>
+            <form action="" method="get">
+                <input type="search" placeholder="Найти">
+                <button type="button"><i class="fas fa-search nav-icons"></i></button>
             </form>
         </div>
 
-        <div class="d-none d-md-flex">
-            <a class="mr-2" href="#">
-                <div class="circle-nav mr-2"></div>
+        <div class="navbar-right">
+            <a href="#">
+                <div class="circle-nav"></div>
                 <span class="nickname-nav">А.И. Гайдамака</span>
             </a>
         </div>
@@ -45,8 +45,8 @@
 
     <div class="page-container">
         <div class="collapse left-bar-desktop left-bar" id="fastFunc">
-            <div class="left-bar-menus d-none d-md-block">
-                <a class="left-bar-a" data-toggle="collapse" href="#categories">Категории <i class="ml-1 fas fa-sort-down"></i></a>
+            <div class="left-bar-menus">
+                <a data-toggle="collapse" href="#categories">Категории <i class="fas fa-sort-down"></i></a>
 
                 <div class="collapse" id="categories">
                     <div class="dropright">
@@ -143,48 +143,93 @@
             <a href="../Asperanto/index.html">на главную</a>
         </div> <!-- левая часть (категории и т.д.) -->
 
-        <main class="main d-flex justify-content-start" role="main">
-            <div class="arrow-back">
-                <a href="../Asperanto/index.html">
-                    <i class="fas fa-angle-double-left" style="font-size: 3rem;"></i>
-                </a>
-            </div>
+        <main class="main" role="main">
+            <div class="main-goods">
+                <div class="product-filters-mobile">
+                    <a>Цена <i class="fas fa-sort-down filter-category-mobile-icon"></i></a>
 
-            <div class="products">
-                <div class="product-window">
-                    <div class="picture-product">
-                        <img src="../Asperanto/static/nopic.png" alt="norm pic">
-                    </div>
+                    <a>Страна <i class="fas fa-sort-down filter-category-mobile-icon"></i></a>
 
-                    <div class="product-meta">
-                        <h5>Установка буровая</h5>
+                    <a class="other-filters-mobile">Остальные фильтры <i class="fas fa-sort-down filter-category-mobile-icon"></i></a>
 
+                    <a class="filter-small-mobile">Фильтры <i class="fas fa-sort-down filter-category-mobile-icon"></i></a>
+                </div>
+
+                <div class="products">
+                    <div class="product-window">
                         <div class="picture-product">
                             <img src="../Asperanto/static/nopic.png" alt="norm pic">
                         </div>
 
-                        <div class="product-headers">
-                            <h5 class="product-price">Цена: 500кк - 650кк руб.</h5>
-                            <h6>Поставщик: ЯмалБурСервис</h6>
-                            <a href="#">Подробнее...</a>
+                        <div class="product-meta">
+                            <h5>Установка буровая</h5>
+
+                            <div class="picture-product">
+                                <img src="../Asperanto/static/nopic.png" alt="norm pic">
+                            </div>
+
+                            <div class="product-headers">
+                                <h5 class="product-price">Цена: 500кк - 650кк руб.</h5>
+                                <h6>Поставщик: ЯмалБурСервис</h6>
+                                <a href="#">Подробнее...</a>
+                            </div>
+
+                            <div class="product-meta-links">
+                                <a href="#">Написать контрагенту</a>
+                                <i class="fas fa-caret-right"></i>
+                            </div>
+
+                            <a class="product-fav">Добавить в избранное</a>
+
+                            <div class="other-pics-product">
+                                <img src="../Asperanto/static/nopic.png" alt="lil pic">
+                                <img src="../Asperanto/static/nopic.png" alt="lil pic">
+                                <img src="../Asperanto/static/nopic.png" alt="lil pic">
+                            </div>
+
                         </div>
 
-                        <div class="d-flex align-items-center">
-                            <a href="#">Написать контрагенту</a>
-                            <i class="fas fa-caret-right"></i>
+                        <div class="product-desc">
+                            <p>Товар классный всем советую пишу эио сллбещещение уле=еле</p>
+                            <a class="product-fav">Добавить в избранное</a>
                         </div>
-
-                        <div class="other-pics-product">
-                            <img src="../Asperanto/static/nopic.png" alt="lil pic">
-                            <img src="../Asperanto/static/nopic.png" alt="lil pic">
-                            <img src="../Asperanto/static/nopic.png" alt="lil pic">
-                        </div>
-
                     </div>
+                </div>
 
-                    <div class="product-desc">
-                        <p>Товар классный всем советую пишу эио сллбещещение уле=еле</p>
-                    </div>
+                <div class="product-filters">
+                    <form action="">
+                        <h5>Фильтры</h5>
+
+                        <div class="filter-price">
+                            <div>
+                                <span>Цена:</span>
+                                <button name="currency" value="rub">Валюта: РУБ</button>
+                            </div>
+
+                            <div>
+                                <span>От:</span>
+
+                                <input type="text" name="from">
+                            </div>
+
+                            <div>
+                                <span>До:</span>
+
+                                <input type="text" name="to" autocomplete="off">
+                            </div>
+                        </div>
+
+                        <div class="filter-countries">
+                            <div>Страна-производитель:</div>
+
+                            <div><input type="checkbox" name="russia"> Российская Федерация </div>
+                            <div><input type="checkbox" name="china"> Китай </div>
+                            <div><input type="checkbox" name="india"> Индия </div>
+                            <div><input type="checkbox" name="kazachstan"> Казахстан </div>
+                        </div>
+
+                        <input type="submit" value="Применить" class="filter-button">
+                    </form>
                 </div>
             </div>
         </main>
