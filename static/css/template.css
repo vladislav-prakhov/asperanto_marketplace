@@ -57,6 +57,7 @@ p {
 .navbar-left {
     display: flex;
     justify-content: space-between;
+    width: 135px;
 }
 
 .navbar-left > button {
@@ -200,6 +201,10 @@ p {
         background-color: #f8f9fa;
         border: 0;
         margin-right: 0.75rem;
+    }
+
+    .navbar-left {
+        width: auto;
     }
 
     .navbar-left > a {

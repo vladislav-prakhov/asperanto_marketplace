@@ -110,6 +110,7 @@
     margin-right: 1rem;
     margin-left: 1rem;
     line-height: 1.2rem;
+    width: 30%;
 }
 
 .product-meta .picture-product { /* На мобилках отображение карточки выглядит иначе, поскольку по другому идет разметка. Это правило скрывает теги, которые используются в мобилках */
@@ -142,6 +143,10 @@
 
 .product-meta .product-headers a { /* Тоже мобилки */
     display: none;
+}
+
+.product-desc {
+    width: 70%;
 }
 
 .product-desc p { /* Правило для описания товара */
@@ -184,6 +189,14 @@
     .product-meta .product-fav {
         margin-top: 0.5rem;
         display: block !important;
+    }
+
+    .product-meta {
+        width: auto;
+    }
+
+    .product-desc {
+        width: 100%;
     }
 }
 
@@ -238,6 +251,14 @@
     .product-meta .product-fav {
         display: none !important;
     }
+
+    .product-meta {
+        width: 30%;
+    }
+
+    .product-desc {
+        width: 70%;
+    }
 }
 
 @media (max-width: 768px) {
@@ -260,6 +281,14 @@
 
     .product-meta .product-fav {
         display: block !important;
+    }
+
+    .product-meta {
+        width: auto;
+    }
+
+    .product-desc {
+        width: 100%;
     }
 }
 
