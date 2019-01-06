@@ -7,7 +7,11 @@
 
 .category {
     width: 100%;
+<<<<<<< HEAD
     background-image: url("../oil.jpg") !important;
+=======
+    background-image: url("../img/oil_gas.jpg") !important;
+>>>>>>> 9af28bf548b3d45c06e2c83a13752c6b40df4c48
     background-size: cover;
     display: block;
     position: sticky;
@@ -15,22 +19,31 @@
     z-index: 0;
 }
 
-.category > h1 {
+.background-shadow {
+    background-color: rgba(0,0,0,0.5);
+}
+
+.category > .background-shadow > h1 {
     text-align: center;
+<<<<<<< HEAD
     padding-top: 7rem;
     padding-bottom: 20rem;
     color: white;
+=======
+    padding-top: 100px;
+    padding-bottom: 200px;
+>>>>>>> 9af28bf548b3d45c06e2c83a13752c6b40df4c48
 }
 
 .links {
+    color: white;
     display: flex;
     justify-content: space-between;
-    padding-bottom: 1rem;
+    padding-bottom: 2rem;
 }
 
 .links a {
-    font-size: 2rem;
-    font-weight: bold;
+    font-size: 1.5rem;
 }
 
 .category-links {
