@@ -7,8 +7,8 @@
 
 .category {
     width: 100%;
-    background-image: url("../nopic.png") !important;
-    background-size: contain;
+    background-image: url("../oil.jpg") !important;
+    background-size: cover;
     display: block;
     position: sticky;
     top: 45px;
@@ -19,6 +19,7 @@
     text-align: center;
     padding-top: 7rem;
     padding-bottom: 20rem;
+    color: white;
 }
 
 .links {
@@ -34,12 +35,14 @@
 
 .category-links {
     margin-left: 3rem;
+    color: white;
 }
 
 .asperanto-link {
     display: flex;
     align-items: flex-end;
     margin-right: 3rem;
+    color: white;
 }
 
 .navbar-products {
