@@ -11,7 +11,7 @@
     background-size: contain;
     display: block;
     position: sticky;
-    top: 0;
+    top: 45px;
     z-index: 0;
 }
 
@@ -42,11 +42,27 @@
     margin-right: 3rem;
 }
 
+.navbar-products {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    height: 65px;
+    background-color: #222;
+}
+
+.navbar-products i {
+    color: white;
+    font-size: 32px;
+    padding-left: 1rem;
+}
+
 .category-products {
+    display: block;
     position: sticky;
     width: 100%;
     overflow: auto;
     z-index: 1;
     background-color: #c5c5c5;
-    top:0;
+    top: 45px;
 }
