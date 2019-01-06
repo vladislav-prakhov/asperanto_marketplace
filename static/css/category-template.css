@@ -7,29 +7,33 @@
 
 .category {
     width: 100%;
-    background-image: url("../nopic.png") !important;
-    background-size: contain;
+    background-image: url("../img/oil_gas.jpg") !important;
+    background-size: cover;
     display: block;
     position: sticky;
     top: 45px;
     z-index: 0;
 }
 
-.category > h1 {
+.background-shadow {
+    background-color: rgba(0,0,0,0.5);
+}
+
+.category > .background-shadow > h1 {
     text-align: center;
-    padding-top: 7rem;
-    padding-bottom: 20rem;
+    padding-top: 100px;
+    padding-bottom: 200px;
 }
 
 .links {
+    color: white;
     display: flex;
     justify-content: space-between;
-    padding-bottom: 1rem;
+    padding-bottom: 2rem;
 }
 
 .links a {
-    font-size: 2rem;
-    font-weight: bold;
+    font-size: 1.5rem;
 }
 
 .category-links {
