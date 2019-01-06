@@ -41,11 +41,19 @@
     color: white;
 }
 
+.category-links a {
+    text-align: left;
+}
+
 .asperanto-link {
     display: flex;
     align-items: flex-end;
     margin-right: 3rem;
     color: white;
+}
+
+.asperanto-link a {
+    text-align: right;
 }
 
 .navbar-products {
@@ -71,4 +79,10 @@
     z-index: 1;
     background-color: #c5c5c5;
     top: 45px;
+}
+
+@media (max-width: 1024px) {
+    .category {
+        top: 0;
+    }
 }

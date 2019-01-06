@@ -235,15 +235,11 @@ p {
     .navbar-right {
         display: none;
     }
-
-    .left-bar-menus {
-        display: none;
-    }
 }
 
 @media (min-width: 1025px) { /* Правило только для десктоп версии */
     .left-bar-desktop {
         display: flex !important;
-        width: 240px; !important;
+        width: 240px;
     }
 }
