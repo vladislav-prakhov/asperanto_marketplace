@@ -1,0 +1,52 @@
+.category-template-main {
+    display: flex;
+    justify-content: space-between;
+    height: auto;
+    position: static;
+}
+
+.category {
+    width: 100%;
+    background-image: url("../nopic.png") !important;
+    background-size: contain;
+    display: block;
+    position: sticky;
+    top: 0;
+    z-index: 0;
+}
+
+.category > h1 {
+    text-align: center;
+    padding-top: 7rem;
+    padding-bottom: 20rem;
+}
+
+.links {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 1rem;
+}
+
+.links a {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.category-links {
+    margin-left: 3rem;
+}
+
+.asperanto-link {
+    display: flex;
+    align-items: flex-end;
+    margin-right: 3rem;
+}
+
+.category-products {
+    position: sticky;
+    width: 100%;
+    overflow: auto;
+    z-index: 1;
+    background-color: #c5c5c5;
+    top:0;
+}
