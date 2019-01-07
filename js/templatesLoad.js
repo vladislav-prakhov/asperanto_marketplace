@@ -1,7 +1,7 @@
 $(function(){
-    $("#sideBar").load("sidebar.html");
+    $("#sideBar").load("templates/sidebar.html");
 });
 
 $(function(){
-    $("#navBar").load("navbar.html");
+    $("#navBar").load("templates/navbar.html");
 });
