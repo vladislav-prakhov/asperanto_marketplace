@@ -1,6 +1,8 @@
 .main-goods {
     display: flex;
     justify-content: space-between;
+    position: sticky;
+    top: 45px;
 }
 
 .products { /* Блок под все товары (карточки с товарами) */
