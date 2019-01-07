@@ -1,0 +1,141 @@
+.arrow-back {
+    display: block;
+    margin-top:1rem;
+    width: 40px;
+    margin-left: 1rem;
+}
+
+.products {
+    margin-left: 2rem;
+    margin-right: 2rem;
+    display: inline-block;
+    width: 100%;
+}
+
+
+.picture-product {
+    text-align: center;
+}
+
+.picture-product img {
+    width: 200px;
+    height: 200px;
+}
+
+
+.picture-product div {
+    margin-top: 0.5rem;
+    display: none;
+}
+
+
+.picture-product div i{
+    margin-left: 0.3rem;
+    text-align: center;
+}
+
+.picture-product div a {
+    font-weight: bold;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.other-pics-product {
+    margin-top: 0.6rem;
+}
+
+.other-pics-product img {
+    height: 32px;
+    width: 32px;
+}
+
+
+
+.product-desc p {
+    width: 100%;
+    display: block;
+    overflow-wrap: break-word;
+    margin: 0 0 0 0;
+}
+
+.product-price {
+    color: rgb(255, 165, 56);
+}
+
+.product-filters {
+    background-color: #ddd;
+    width: 250px;
+    margin: 1rem 0 0 1rem;
+    border: 3px solid #343a40;
+    border-radius: 15px;
+    height: auto;
+    padding: 1rem 0.5rem 1rem 0.5rem;
+    display: block;
+}
+
+@media (max-width: 1200px) {
+
+}
+
+@media (max-width: 1040px) {
+
+    .picture-product img {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+@media (max-width: 767px) {
+    .arrow-back {
+        display: none;
+    }
+}
+
+@media (max-width: 526px) {
+    .products {
+        margin: 0 0 0 0;
+    }
+
+
+
+    .picture-product {
+        display: none;
+    }
+
+
+    .product-desc {
+        display: none;
+    }
+
+    .product-headers {
+        margin-top: 0.5rem;
+        display: inline-block;
+        overflow-wrap: break-word;
+        position: absolute;
+        margin-left: 1rem;
+    }
+}
+
+@media (min-width: 1040px) {
+    .product-desc {
+        display: block !important;
+    }
+}
+
+.window-product {
+    margin: 10px;
+    height: 350px;
+    width: 30%;
+    padding: 10px;
+    border: 3px solid #343a40;
+    margin-top: 1rem;
+    background-color: #f8f9fa;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    position: relative;
+    float: left;
+}
+
+.product-pr {
+    padding-top: 10px;
+}
