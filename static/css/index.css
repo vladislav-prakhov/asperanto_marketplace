@@ -1,3 +1,10 @@
+.main-index {
+    position: sticky;
+    top: 45px;
+    display: flex;
+    flex-direction: column;
+}
+
 .main-icons { /* Красивое отображение основных иконок */
     font-size: 5rem;
 }
