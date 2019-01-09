@@ -14,6 +14,7 @@ body {
     font-family: 'IBM Plex Sans', sans-serif;
     z-index: 0;
     position: relative;
+    overflow: auto;
 }
 
 /* Оба правила переписывают поведение тегов <a>, <button> под нейтральное*/
@@ -195,7 +196,14 @@ p {
     padding-right: 0;
     padding-left: 0;
     width: 100%;
-    margin-top: 45px;
+}
+
+.wrap-main {
+    width: 100%;
+    position: sticky;
+    display: flex;
+    flex-direction: column;
+    top: 45px;
 }
 
 .dropright .dropdown-toggle::after { /* Чиним поведение стрелочек в бутстрепе */

@@ -3,6 +3,7 @@
     justify-content: space-between;
     position: sticky;
     top: 45px;
+    margin-top: 45px;
 }
 
 .products { /* Блок под все товары (карточки с товарами) */
