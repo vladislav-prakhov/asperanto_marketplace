@@ -62,7 +62,7 @@ p {
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    padding: 0.5rem 1rem;
+    padding: 0 1rem 0 1rem;
     border-bottom: 1px solid rgba(0, 0, 0, .1);
     background-color: #f8f9fa;
 }
@@ -188,6 +188,18 @@ p {
 
 .category-arrow-left { /* Правило для стрелочки */
     margin-right: 0.5rem;
+}
+
+.counteragents-items {
+    display: flex;
+    align-content: center;
+    padding: 0 0 0.5rem 0;
+}
+
+.counteragents-items i {
+    font-size: 34px;
+    margin-right: 0.5rem;
+    width: 32px;
 }
 
 .main { /* Правило для правой части страницы */
