@@ -190,6 +190,18 @@ p {
     margin-right: 0.5rem;
 }
 
+.counteragents-items {
+    display: flex;
+    align-content: center;
+    padding: 0 0 0.5rem 0;
+}
+
+.counteragents-items i {
+    font-size: 34px;
+    margin-right: 0.5rem;
+    width: 32px;
+}
+
 .main { /* Правило для правой части страницы */
     display: block;
     position: relative;
