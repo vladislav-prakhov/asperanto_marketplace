@@ -14,6 +14,7 @@ body {
     font-family: 'IBM Plex Sans', sans-serif;
     z-index: 0;
     position: relative;
+    overflow: auto;
 }
 
 /* Оба правила переписывают поведение тегов <a>, <button> под нейтральное*/
@@ -61,7 +62,7 @@ p {
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    padding: 0.5rem 1rem;
+    padding: 0 1rem 0 1rem;
     border-bottom: 1px solid rgba(0, 0, 0, .1);
     background-color: #f8f9fa;
 }
@@ -189,13 +190,32 @@ p {
     margin-right: 0.5rem;
 }
 
+.counteragents-items {
+    display: flex;
+    align-content: center;
+    padding: 0 0 0.5rem 0;
+}
+
+.counteragents-items i {
+    font-size: 34px;
+    margin-right: 0.5rem;
+    width: 32px;
+}
+
 .main { /* Правило для правой части страницы */
     display: block;
     position: relative;
     padding-right: 0;
     padding-left: 0;
     width: 100%;
-    margin-top: 45px;
+}
+
+.wrap-main {
+    width: 100%;
+    position: sticky;
+    display: flex;
+    flex-direction: column;
+    top: 45px;
 }
 
 .dropright .dropdown-toggle::after { /* Чиним поведение стрелочек в бутстрепе */

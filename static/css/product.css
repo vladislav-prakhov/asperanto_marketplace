@@ -3,6 +3,7 @@
     justify-content: space-between;
     position: sticky;
     top: 45px;
+    margin-top: 45px;
 }
 
 .products { /* Блок под все товары (карточки с товарами) */
@@ -174,6 +175,24 @@
 
 .product-meta .product-fav {
     display: none;
+}
+
+.window-product {
+    margin: 10px;
+    height: 350px;
+    width: 30%;
+    padding: 10px;
+    border: 3px solid #343a40;
+    margin-top: 1rem;
+    background-color: #f8f9fa;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    position: relative;
+    float: left;
+}
+
+.product-pr {
+    padding-top: 10px;
 }
 
 @media (max-width: 1200px) { /* Все ради узких мониторов */
@@ -376,3 +395,5 @@
         display: block !important;
     }
 }
+
+
