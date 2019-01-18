@@ -13,8 +13,14 @@ body {
     background-color: #c5c5c5;
     font-family: 'IBM Plex Sans', sans-serif;
     z-index: 0;
-    position: relative;
     overflow: auto;
+    display: grid;
+    grid-template-rows: [header] 42px [body] auto [footer] 42px [end];
+    grid-template-columns: 240px auto;
+    grid-template-areas:
+        "header header"
+        "sidebar main"
+        "footer footer";
 }
 
 /* Оба правила переписывают поведение тегов <a>, <button> под нейтральное*/
@@ -49,6 +55,7 @@ p {
     display: flex;
     flex-direction: row;
     min-height: 100vh;
+    grid-area:
 }
 
 .navbar {
@@ -65,6 +72,7 @@ p {
     padding: 0 1rem 0 1rem;
     border-bottom: 1px solid rgba(0, 0, 0, .1);
     background-color: #f8f9fa;
+    grid-area: header;
 }
 
 .navbar-left {
@@ -139,19 +147,18 @@ p {
 .wrap-left-bar {
     background-color: #f8f9fa !important;
     border-right: 1px solid rgba(0,0,0,.1);
-    min-height: 100%;
+    grid-area: sidebar;
 }
 
 .left-bar { /* Основные настройки левой панели */
-    margin-top: 45px;
     display: flex;
     background-color: #f8f9fa !important;
     flex-direction: column;
     -ms-flex-direction: column;
     padding: 0 0 0 0;
     position: sticky;
-    top: 45px;
     z-index: 1;
+    top: 45px;
 }
 
 .left-bar > div > a { /* Поскольку каждый заголовок в левой части является триггером для вызова collapse менюшки,
@@ -208,6 +215,7 @@ p {
     padding-right: 0;
     padding-left: 0;
     width: 100%;
+    grid-area: main;
 }
 
 .wrap-main {
@@ -254,6 +262,18 @@ p {
 
     .navbar-right {
         display: none;
+    }
+}
+
+@media (max-width: 1024px) {
+    body {
+        grid-template-rows: [header] 42px [sidebar] auto [body] auto [footer] 42px [end];
+        grid-template-columns: auto;
+        grid-template-areas:
+                "header"
+                "sidebar"
+                "main"
+                "footer";
     }
 }
 

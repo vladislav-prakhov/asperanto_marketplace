@@ -26,15 +26,13 @@
 #### Тег <body> должен выглядеть вот так
 
     <body>
-        <div id="navBar"></div>
+        <nav class="navbar" id="navBar"></nav>
     
-        <div class="page-container">
-            <div id="sideBar"></div>
-        
-            <main class="main" role="main">
-        
-                <!-- тут код страницы -->
-        
-            </main>
-        </div>
+        <div class="wrap-left-bar" id="sideBar"></div>
+    
+        <main class="main" role="main">
+    
+            <!-- тут код страницы -->
+    
+        </main>
     </body>
