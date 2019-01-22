@@ -1,25 +1,91 @@
 .main-goods {
-    display: flex;
-    justify-content: space-between;
-    position: sticky;
-    top: 45px;
-    margin-top: 45px;
+    display: grid;
+    grid-template-columns: [start] auto [products-end filters-start] 300px [end];
+    grid-template-rows: [start] auto [end];
+    grid-template-areas:
+        "products filters";
+    position: relative;
+    height: 100%;
 }
 
 .products { /* Блок под все товары (карточки с товарами) */
-    margin-left: 2rem;
-    margin-right: 2rem;
-    display: inline-block;
-    width: 100%;
-    margin-top: 1rem;
+    grid-area: products;
+    display: grid;
+    grid-template-columns: [start] repeat(2, 1fr) [end];
+    grid-auto-rows: 420px;
+    grid-column-gap: 1rem;
+    grid-row-gap: 1rem;
+    margin: 1rem 1rem 2rem 1rem;
 }
 
-.product-filters-mobile {
-    display: none;
+.product-window { /* Непосредственно правило для карточки */
+    background-color: white;
+    display: grid;
+    grid-template-rows: [start] 0 210px 100px 60px [end];
+    grid-template-areas: "." "pic" "meta" "links";
+    grid-row-gap: 15px;
+}
+
+.product-pic { /* Класс, который определяет поведение блока, хранящий картинку */
+    grid-area: pic;
+    position: relative;
+    display: block;
+    justify-self: center;
+}
+
+.product-meta { /* Блок, в котором находятся название товара, цена, поставщик (мета информация),
+                    также ссылки (либо "подробнее..." либо "написать контрагенту" и блок с дополнительными картинками */
+    display: flex;
+    flex-direction: column;
+    margin-right: 1rem;
+    margin-left: 1rem;
+    line-height: 1.2rem;
+    grid-area: meta;
+    border-bottom: 2px solid #ccc
+}
+
+.product-name {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.product-author {
+    font-size: 14px;
+}
+
+.product-price {
+    color: rgb(255, 165, 56);
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 15px;
+
+}
+
+.product-links {
+    display: flex;
+    flex-direction: column;
+    margin-right: 1rem;
+    margin-left: 1rem;
+    line-height: 1.2rem;
+    grid-area: links;
+}
+
+.product-contact {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.product-fav {
+
 }
 
 .product-filters {
-    width: 380px;
+    grid-area: filters;
+    display: flex;
+    height: 100%;
+    background-color: white;
 }
 
 .product-filters > form {
@@ -40,8 +106,6 @@
 }
 
 .filter-button {
-    border: 0px solid #343a40;
-    border-radius: 0px;
     background-color: #fff;
     font-weight: bold;
     margin-top: 0.5rem;
@@ -56,14 +120,11 @@
 }
 
 .filter-price div button {
-    border: 0px solid #343a40;
-    border-radius: 0px;
     background-color: #fff;
     font-weight: bold;
 }
 
 .filter-price > div > input {
-    border: 0px solid #343a40;
     border-radius: 25px;
     background-color: #fff;
     font-weight: bold;
@@ -77,323 +138,32 @@
     display: none !important;
 }
 
-.product-window { /* Непосредственно правило для карточки */
-    width: 100%;
-    padding: 1rem 1.5rem 1rem 1.5rem;
-    margin-bottom: 2rem;
-    border: 0px solid #343a40;
-    background-color: #f8f9fa;
-    display: flex;
-    justify-content: flex-start;
-    flex-wrap: nowrap;
-    position: relative;
-}
-
-.picture-product { /* Класс, который определяет поведение блока, хранящий картинку */
-    position: relative;
-    display: inline-block;
-}
-
-.picture-product img { /* Размер основной картинки */
-    width: 200px;
-    height: 200px;
-}
-
-.other-pics-product { /* Правило, описывающее поведение блока, хранящего маленькие дополнительные картинки */
-    margin-top: 0.6rem;
-}
-
-.other-pics-product img { /* Размер дополнительных картинок */
-    height: 32px;
-    width: 32px;
-}
-
-.product-meta { /* Блок, в котором находятся название товара, цена, поставщик (мета информация),
-                    также ссылки (либо "подробнее..." либо "написать контрагенту" и блок с дополнительными картинками */
-    display: inline-block;
-    margin-right: 1rem;
-    margin-left: 1rem;
-    line-height: 1.2rem;
-    width: 30%;
-}
-
-.product-meta .picture-product { /* На мобилках отображение карточки выглядит иначе, поскольку по другому идет разметка. Это правило скрывает теги, которые используются в мобилках */
-    display: none;
-}
-
-/* Описание правил для текста в мета информации */
-
-.product-meta h5 {
-    margin-bottom: 0.4rem;
-    font-size: 1.1rem;
-    overflow-wrap: break-spaces;
-}
-
-.product-meta h6 {
-    margin-bottom: 0.4rem;
-    font-size: 0.9rem;
-    overflow-wrap: break-spaces;
-}
-
-.product-meta a {
-    font-weight: bold;
-    font-size: 1.1rem;
-    margin-right: 0.5rem;
-}
-
-.product-price {
-    color: rgb(255, 165, 56);
-}
-
-.product-meta .product-headers a { /* Тоже мобилки */
-    display: none;
-}
-
-.product-desc {
-    width: 70%;
-}
-
-.product-desc p { /* Правило для описания товара */
-    width: 100%;
-    display: block;
-    overflow-wrap: break-word;
-    margin: 0 0 0 0;
-    height: 85%;
-}
-
-.product-desc .product-fav { /* Правило для описания товара */
-    display: block;
-    text-align: right;
-    font-weight: bold;
-    font-size: 1.3rem;
-}
-
-.product-meta-links {
-    display: flex;
-    align-items: center;
-}
-
-.product-meta .product-fav {
-    display: none;
-}
-
-.window-product {
-    margin: 10px;
-    height: 350px;
-    width: 30%;
-    padding: 10px;
-    border: 3px solid #343a40;
-    margin-top: 1rem;
-    background-color: #f8f9fa;
-    justify-content: flex-start;
-    flex-wrap: nowrap;
-    position: relative;
-    float: left;
-}
-
-.product-pr {
-    padding-top: 10px;
-}
-
-@media (max-width: 1200px) { /* Все ради узких мониторов */
-    .product-window {
-        flex-wrap: wrap;
-    }
-
-    .product-desc {
-        margin-top: 0.5rem;
-    }
-
-    .product-fav {
-        display: none !important;
-    }
-
-    .product-meta .product-fav {
-        margin-top: 0.5rem;
-        display: block !important;
-    }
-
-    .product-meta {
-        width: auto;
-    }
-
-    .product-desc {
-        width: 100%;
-    }
-}
-
-@media (max-width: 1024px) {
-    .filter-category-mobile-icon {
-        font-size: 12px;
-        margin-left: 0.25rem;
-    }
-
-    .main-goods {
-        display: block;
-    }
-
+@media (min-width: 1270px) {
     .products {
-        margin: 0;
-    }
-
-    .product-filters-mobile {
-        display: block;
-        width: 100%;
-        background-color: #f8f9fa;
-        padding: 1rem 1rem 1rem 1.5rem;
-        border-bottom: 1px solid rgba(0, 0, 0, .1);
-    }
-
-    .product-filters-mobile > a {
-        display: inline-flex;
-        align-items: center;
-        margin-right: 2rem;
-    }
-
-    .other-filters-mobile {
-        float: right;
-    }
-
-    .product-filters {
-        display: none;
-    }
-
-    .product-window {
-        flex-wrap: nowrap;
-    }
-
-    .product-desc {
-        margin-top: 0;
-    }
-
-    .product-fav {
-        display: block !important;
-    }
-
-    .product-meta .product-fav {
-        display: none !important;
-    }
-
-    .product-meta {
-        width: 30%;
-    }
-
-    .product-desc {
-        width: 70%;
+        grid-template-columns: [start] repeat(3, 1fr) [end];
     }
 }
 
-@media (max-width: 768px) {
-    .picture-product img { /* Размер основной картинки */
-        width: 150px;
-        height: 150px;
-    }
-
-    .product-window {
-        flex-wrap: wrap;
-    }
-
-    .product-desc {
-        margin-top: 0.5rem;
-    }
-
-    .product-fav {
-        display: none !important;
-    }
-
-    .product-meta .product-fav {
-        display: block !important;
-    }
-
-    .product-meta {
-        width: auto;
-    }
-
-    .product-desc {
-        width: 100%;
-    }
-}
-
-@media (max-width: 500px) { /* Тут начинаются правила для новой карточки (мобильной) (связка классов .product-meta .picture-product используется только в
-                                                      мобильной версии (отображает картинку), а просто .picture-product - в десктопах)  */
-
-    .product-filters-mobile a:not(filter-small-mobile) {
-        display: none;
-    }
-
-    .filter-small-mobile {
-        text-align: center;
-        display: inline-flex !important;
-        align-items: center;
-    }
-
-    .product-meta .product-fav {
-        display: none !important;
-    }
-
+@media (min-width: 1520px) {
     .products {
-        margin: 0 0 0 0;
-    }
-
-    .product-window {
-        width: 100%;
-    }
-
-    .picture-product {
-        display: none;
-    }
-
-    .product-meta {
-        display: block;
-        width: 100%;
-        margin: 0 0 0 0;
-    }
-
-    .product-meta h5 {
-        text-align: center;
-    }
-
-    .product-meta div h5 {
-        text-align: left;
-    }
-
-    .product-meta .picture-product {
-        margin-top: 0.5rem;
-        display: inline-block;
-    }
-
-    .product-meta .picture-product img {
-        display: block;
-        width: 100px;
-        height: 100px;
-    }
-
-    .product-meta > div > a,
-    .product-meta > div > i { /* Прячем "написать контрагенту" */
-        display: none;
-    }
-
-    .product-meta .product-headers a {
-        display: inline-block;
-    }
-
-    .product-desc {
-        display: none;
-    }
-
-    .product-headers { /* Класс для цены, производителя и ссылки "подробнее..." */
-        margin-top: 0.5rem;
-        display: inline-block;
-        overflow-wrap: break-word;
-        position: absolute;
-        margin-left: 1rem;
+        grid-template-columns: [start] repeat(4, 1fr) [end];
     }
 }
 
-@media (min-width: 1040px) {
-    .product-desc {
-        display: block !important;
+@media (min-width: 1920px) {
+    .products {
+        grid-template-columns: [start] repeat(5, 1fr) [end];
     }
 }
 
+@media (min-width: 2150px) {
+    .products {
+        grid-template-columns: [start] repeat(6, 1fr) [end];
+    }
+}
 
+@media (min-width: 2450px) {
+    .products {
+        grid-template-columns: [start] repeat(7, 1fr) [end];
+    }
+}

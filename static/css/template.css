@@ -1,5 +1,5 @@
 html{ /* Использование шрифта, обозначение основного цвета заднего фона*/
-    background-color: #c5c5c5;
+    background-color: #f4f4f4;
     font-family: 'IBM Plex Sans', sans-serif;
     z-index: 0;
     margin: 0;
@@ -10,12 +10,12 @@ body {
     min-height: 100vh;
     width: 100%;
     margin: 0;
-    background-color: #c5c5c5;
+    background-color: #f4f4f4;
     font-family: 'IBM Plex Sans', sans-serif;
     z-index: 0;
     overflow: auto;
     display: grid;
-    grid-template-rows: [header] 42px [body] auto [footer] 42px [end];
+    grid-template-rows: [header] 42px [body] 1fr [footer] 42px [end];
     grid-template-columns: 240px auto;
     grid-template-areas:
         "header header"
@@ -51,13 +51,6 @@ p {
     margin-bottom: 0;
 }
 
-.page-container { /* Обозначаем свойства расположения объектов в основной части страницы (т.е. исключая навбар) */
-    display: flex;
-    flex-direction: row;
-    min-height: 100vh;
-    grid-area:
-}
-
 .navbar {
     position: fixed;
     height: 45px;
@@ -71,7 +64,7 @@ p {
     justify-content: space-between;
     padding: 0 1rem 0 1rem;
     border-bottom: 1px solid rgba(0, 0, 0, .1);
-    background-color: #f8f9fa;
+    background-color: #ffffff;
     grid-area: header;
 }
 
@@ -139,20 +132,20 @@ p {
 
 .search_width > form > button {
     display: flex;
-    background-color: #f8f9fa;
+    background-color: white;
     border: 0;
     margin-right: 0.25rem;
 }
 
 .wrap-left-bar {
-    background-color: #f8f9fa !important;
+    background-color: white !important;
     border-right: 1px solid rgba(0,0,0,.1);
     grid-area: sidebar;
 }
 
 .left-bar { /* Основные настройки левой панели */
     display: flex;
-    background-color: #f8f9fa !important;
+    background-color: white !important;
     flex-direction: column;
     -ms-flex-direction: column;
     padding: 0 0 0 0;
@@ -224,6 +217,20 @@ p {
     display: flex;
     flex-direction: column;
     top: 45px;
+}
+
+.footer {
+    grid-area: footer;
+    background-color: #333;
+    border-top: 1px solid #c5c5c5;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.footer-logo {
+    font-weight: bold;
+    color: white;
 }
 
 .dropright .dropdown-toggle::after { /* Чиним поведение стрелочек в бутстрепе */
