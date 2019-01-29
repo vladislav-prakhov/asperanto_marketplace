@@ -8,6 +8,7 @@ html{ /* Использование шрифта, обозначение осн�
 
 body {
     min-height: 100vh;
+    height: 100vh;
     width: 100%;
     margin: 0;
     background-color: #f4f4f4;
@@ -16,11 +17,11 @@ body {
     overflow: auto;
     display: grid;
     grid-template-rows: [header] 42px [body] 1fr [footer] 42px [end];
-    grid-template-columns: 240px auto;
+    grid-template-columns: 100%;
     grid-template-areas:
-        "header header"
-        "sidebar main"
-        "footer footer";
+        "header"
+        "main"
+        "footer";
 }
 
 /* Оба правила переписывают поведение тегов <a>, <button> под нейтральное*/
@@ -62,7 +63,7 @@ p {
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    padding: 0 1rem 0 1rem;
+    padding: 0 10px 0 10px;
     border-bottom: 1px solid rgba(0, 0, 0, .1);
     background-color: #ffffff;
     grid-area: header;
@@ -84,7 +85,11 @@ p {
 }
 
 .navbar-left > button {
-    display: none;
+    display: flex;
+    background-color: white;
+    border: 0;
+    margin-right: 20px;
+    margin-left: 10px;
 }
 
 .navbar-right {
@@ -219,7 +224,7 @@ p {
     top: 45px;
 }
 
-.footer {
+footer {
     grid-area: footer;
     background-color: #333;
     border-top: 1px solid #c5c5c5;
@@ -260,13 +265,6 @@ p {
     .page-container {
         height: auto;
         flex-direction: column;
-    }
-
-    .navbar-left > button {
-        display: flex;
-        background-color: #f8f9fa;
-        border: 0;
-        margin-right: 0.75rem;
     }
 
     .navbar-left {

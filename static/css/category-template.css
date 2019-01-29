@@ -1,6 +1,6 @@
 .main-categories {
     display: grid;
-    grid-template-rows: [start] 75vh 65px 2fr [end];
+    grid-template-rows: [start] calc(100vh - 105px) 65px 2fr [end];
     grid-template-areas: "category" "navbar" "products";
 }
 
