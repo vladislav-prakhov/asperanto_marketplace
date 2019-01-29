@@ -4,6 +4,15 @@ html{ /* Использование шрифта, обозначение осн�
     z-index: 0;
     margin: 0;
     min-height: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    -webkit-box-sizing: inherit;
+    -moz-box-sizing: inherit;
+    box-sizing: inherit;
 }
 
 body {
@@ -15,13 +24,21 @@ body {
     font-family: 'IBM Plex Sans', sans-serif;
     z-index: 0;
     overflow: auto;
+}
+
+#root {
+    height: 100%;
+}
+
+.wrapper {
+    height: 100%;
     display: grid;
     grid-template-rows: [header] 42px [body] 1fr [footer] 42px [end];
     grid-template-columns: 100%;
     grid-template-areas:
-        "header"
-        "main"
-        "footer";
+            "header"
+            "main"
+            "footer";
 }
 
 /* Оба правила переписывают поведение тегов <a>, <button> под нейтральное*/
@@ -67,6 +84,7 @@ p {
     border-bottom: 1px solid rgba(0, 0, 0, .1);
     background-color: #ffffff;
     grid-area: header;
+    box-sizing: inherit;
 }
 
 .navbar-left {
@@ -214,6 +232,7 @@ p {
     padding-left: 0;
     width: 100%;
     grid-area: main;
+    box-sizing: inherit;
 }
 
 .wrap-main {
@@ -283,12 +302,5 @@ footer {
         position: sticky;
         top: 42px;
         z-index: 2;
-    }
-}
-
-@media (min-width: 1025px) { /* Правило только для десктоп версии */
-    .left-bar-desktop {
-        display: flex !important;
-        width: 240px;
     }
 }
