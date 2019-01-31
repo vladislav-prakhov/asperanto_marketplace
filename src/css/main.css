@@ -1,0 +1,17 @@
+.main { /* Правило для правой части страницы */
+    display: block;
+    position: relative;
+    padding-right: 0;
+    padding-left: 0;
+    width: 100%;
+    grid-area: main;
+    box-sizing: inherit;
+}
+
+.wrap-main {
+    width: 100%;
+    position: sticky;
+    display: flex;
+    flex-direction: column;
+    top: 45px;
+}

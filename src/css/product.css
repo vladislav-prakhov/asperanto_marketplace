@@ -6,17 +6,53 @@
         "products filters";
     position: relative;
     height: 100%;
+    overflow: hidden;
 }
+
+/* ----------------------------------------------------- Окошки с товарами -------------------------------------------------------- */
 
 .products { /* Блок под все товары (карточки с товарами) */
     grid-area: products;
     display: grid;
     grid-template-columns: [start] repeat(2, 1fr) [end];
     grid-auto-rows: 420px;
-    grid-column-gap: 1rem;
-    grid-row-gap: 1rem;
-    margin: 1rem 1rem 2rem 1rem;
+    overflow: auto;
+    padding-bottom: 10px;
+    margin-top: 25px;
+    margin-left: 10px;
+    border-top: 1px solid #ccc;
 }
+
+@media (min-width: 1270px) {
+    .products {
+        grid-template-columns: [start] repeat(3, 1fr) [end];
+    }
+}
+
+@media (min-width: 1520px) {
+    .products {
+        grid-template-columns: [start] repeat(4, 1fr) [end];
+    }
+}
+
+@media (min-width: 1920px) {
+    .products {
+        grid-template-columns: [start] repeat(5, 1fr) [end];
+    }
+}
+
+@media (min-width: 2150px) {
+    .products {
+        grid-template-columns: [start] repeat(6, 1fr) [end];
+    }
+}
+
+@media (min-width: 2450px) {
+    .products {
+        grid-template-columns: [start] repeat(7, 1fr) [end];
+    }
+}
+
 
 .product-window { /* Непосредственно правило для карточки */
     background-color: white;
@@ -24,6 +60,7 @@
     grid-template-rows: [start] 0 210px 100px 60px [end];
     grid-template-areas: "." "pic" "meta" "links";
     grid-row-gap: 15px;
+    border-bottom: 2px solid #ccc;
 }
 
 .product-pic { /* Класс, который определяет поведение блока, хранящий картинку */
@@ -81,11 +118,21 @@
 
 }
 
+/* ---------------------------------------------------- Фильтр ---------------------------------------------------------- */
+
 .product-filters {
     grid-area: filters;
-    display: flex;
     height: 100%;
     background-color: white;
+    border-left: 1px solid #cbcbcb;
+    box-sizing: content-box;
+    padding-left: 10px;
+    padding-top: 5px;
+}
+
+.product-filters-wrapper {
+    display: block;
+    padding: 15px;
 }
 
 .product-filters > form {
@@ -138,32 +185,3 @@
     display: none !important;
 }
 
-@media (min-width: 1270px) {
-    .products {
-        grid-template-columns: [start] repeat(3, 1fr) [end];
-    }
-}
-
-@media (min-width: 1520px) {
-    .products {
-        grid-template-columns: [start] repeat(4, 1fr) [end];
-    }
-}
-
-@media (min-width: 1920px) {
-    .products {
-        grid-template-columns: [start] repeat(5, 1fr) [end];
-    }
-}
-
-@media (min-width: 2150px) {
-    .products {
-        grid-template-columns: [start] repeat(6, 1fr) [end];
-    }
-}
-
-@media (min-width: 2450px) {
-    .products {
-        grid-template-columns: [start] repeat(7, 1fr) [end];
-    }
-}

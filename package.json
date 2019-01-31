@@ -5,6 +5,7 @@
   "main": "base.js",
   "dependencies": {
     "react": "^16.7.0",
+    "react-addons-css-transition-group": "^15.6.2",
     "react-dom": "^16.7.0",
     "react-hot-loader": "^4.6.3",
     "react-router-dom": "^4.3.1"

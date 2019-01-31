@@ -3,6 +3,7 @@ import {Link, Route, Switch} from "react-router-dom";
 import { Goods } from '../Pages/Goods.js';
 import { Category } from '../Pages/Category.js';
 import { Home } from '../Pages/Home.js';
+import '../css/main.css';
 
 export function Main() {
     return (

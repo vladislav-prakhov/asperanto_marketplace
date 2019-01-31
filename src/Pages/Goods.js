@@ -125,8 +125,10 @@ export function Goods() {
                 </div>
             </div>
 
-            <div className="product-filters">
-                <h2>Фильтры</h2>
+            <div className="product-filters-wrapper">
+                <div className="product-filters">
+                    <h3>Показать результаты</h3>
+                </div>
             </div>
         </div>
     );

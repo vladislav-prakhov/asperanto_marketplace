@@ -42,10 +42,6 @@
     width: 15%;
 }
 
-.asperanto-link a {
-    text-align: right;
-}
-
 .navbar-products {
     display: flex;
     align-items: center;
@@ -54,6 +50,8 @@
     height: 65px;
     background-color: #333;
     grid-area: navbar;
+    box-shadow: 0 5px 5px #bbb;
+    z-index: 3;
 }
 
 .link {
@@ -75,7 +73,7 @@
     width: 100%;
     overflow: auto;
     z-index: 1;
-    background-color: #f4f4f4;
     top: 45px;
     grid-area: products;
+    background-color: white;
 }
