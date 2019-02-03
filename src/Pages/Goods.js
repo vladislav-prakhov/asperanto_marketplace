@@ -1,5 +1,5 @@
 import React from "react";
-import "..\\css\\product.css";
+import "./css/product.css";
 
 export function Goods() {
     return (

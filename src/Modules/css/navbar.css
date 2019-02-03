@@ -9,14 +9,13 @@
     grid-template-areas:
         "left-part center right-part"
         ". categories .";
-    grid-template-columns: [leftPart-start] 165px [leftPart-end center-start] 1fr [center-end rightPart-start] 170px;
+    grid-template-columns: [leftPart-start] 170px [leftPart-end center-start] 1fr [center-end rightPart-start] 170px;
     align-items: center;
     grid-template-rows: 1fr 1fr;
-    padding: 0 10px 0 10px;
     background-color: white;
     grid-area: header;
     box-sizing: inherit;
-    box-shadow: 0 0 10px 0 #bbb;
+    box-shadow: 0 0 10px #bbb;
 }
 
 /* --------------------------------------------------------- Левая часть --------------------------------------------- */
@@ -37,7 +36,7 @@
     display: inline;
     background-color: white;
     border: 0;
-    margin-right: 20px;
+    margin-right: 10px;
     margin-left: 10px;
 }
 
@@ -45,8 +44,6 @@
 
 .center { /* Отражает поведение поисковой строки */
     display: flex;
-    flex-grow: 0 !important;
-    width: 50% !important;
     grid-area: center;
     justify-self: center;
 }
@@ -59,7 +56,7 @@
 
 .center > form > input {
     display: inline-block;
-    width: 100%;
+    width: 500px;
     padding: 5px 5px 5px 5px;
     border: 1px solid rgba(0, 0, 0, .1);
     border-top-left-radius: 4px;
@@ -95,12 +92,6 @@
 
 .center > form i {
     font-size: 20px;
-}
-
-@media (max-width: 1024px) {
-    .center > form > button {
-        display: none;
-    }
 }
 
 .nav-icons { /* Нормально отображает подгруженные с font-awesome иконки в навбаре */

@@ -1,47 +1,52 @@
-import React from "react";
+import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { Sidebarinit } from "./Sidebar";
-import '../css/navbar.css'
+import './css/navbar.css'
 
-export function Navbar() {
-    return (
-        <div className="navbar">
-            <div className="navbar-left">
-                <button className="" type="button" onClick={ Sidebarinit }>
-                    <i className="fas fa-bars nav-icons"></i>
-                </button>
+export class Navbar extends Component {
+    constructor (props) {
+        super(props);
+    }
 
-                <Link to="/" >
-                    Asperanto
-                </Link>
-            </div>
+    render () {
+        return (
+            <nav className="navbar">
+                <div className="navbar-left">
+                    <button className="" type="button" onClick={ this.props.sidebarToggle }>
+                        <i className="fas fa-bars nav-icons"></i>
+                    </button>
 
-            <div className="center">
-                <form action="" method="get">
-                    <input type="text" placeholder="Найти"></input>
-                    <button type="button"><i className="fas fa-search nav-icons"></i></button>
-                </form>
-            </div>
+                    <Link to="/" >
+                        Asperanto
+                    </Link>
+                </div>
 
-            <div className="navbar-right">
-                <a href="#">
-                    <div className="circle-nav"></div>
-                    <span className="nickname-nav">А.И. Гайдамака</span>
-                </a>
-            </div>
+                <div className="center">
+                    <form action="" method="get">
+                        <input type="text" placeholder="Найти" onClick={ this.props.searchBoxToggle } onChange={ this.props.searchBoxQuery }></input>
+                        <button type="button"><i className="fas fa-search nav-icons"></i></button>
+                    </form>
+                </div>
 
-            <div className="categories">
-                <a className="categories-all">Все категории</a>
+                <div className="navbar-right">
+                    <a href="#">
+                        <div className="circle-nav"></div>
+                        <span className="nickname-nav">А.И. Гайдамака</span>
+                    </a>
+                </div>
 
-                <a>Промышленность</a>
+                <div className="categories">
+                    <a className="categories-all">Все категории</a>
 
-                <a>Категория 2</a>
+                    <a>Промышленность</a>
 
-                <a>Категория 3</a>
+                    <a>Категория 2</a>
 
-                <a>Категория 4</a>
+                    <a>Категория 3</a>
 
-                <a>Категория 5</a>
-            </div>
-        </div>
-)}
+                    <a>Категория 4</a>
+
+                    <a>Категория 5</a>
+                </div>
+            </nav>
+        )}
+}

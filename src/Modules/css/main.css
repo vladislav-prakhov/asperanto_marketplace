@@ -7,11 +7,3 @@
     grid-area: main;
     box-sizing: inherit;
 }
-
-.wrap-main {
-    width: 100%;
-    position: sticky;
-    display: flex;
-    flex-direction: column;
-    top: 45px;
-}

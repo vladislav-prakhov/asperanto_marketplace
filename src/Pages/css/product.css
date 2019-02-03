@@ -60,7 +60,7 @@
     grid-template-rows: [start] 0 210px 100px 60px [end];
     grid-template-areas: "." "pic" "meta" "links";
     grid-row-gap: 15px;
-    border-bottom: 2px solid #ccc;
+    border-bottom: 1px solid #ccc;
 }
 
 .product-pic { /* Класс, который определяет поведение блока, хранящий картинку */

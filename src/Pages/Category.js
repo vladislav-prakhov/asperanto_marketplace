@@ -1,6 +1,6 @@
 import React from "react";
 import { Goods } from './Goods.js';
-import "..\\css\\category-template.css";
+import "./css/category-template.css";
 
 export function Category() {
     return (
