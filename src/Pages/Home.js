@@ -10,7 +10,7 @@ export class Home extends Component {
     render () {
         return (
             <div className="main-home">
-                <Link to="/category"><h1>Категории</h1></Link>
+                <a href="/category"><h1>Категории</h1></a>
             </div>
         );
     }

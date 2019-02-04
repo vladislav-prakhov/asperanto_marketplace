@@ -16,7 +16,7 @@ export class Search extends Component {
     }
 
     isChecked(value) {
-        return this.props.state.searchBox.additionalInfo.typeOfSearch == value;
+        return this.props.state.searchBox.additionalInfo.typeOfSearch === value;
     }
 
     switchClassDependingOnSidebar() {

@@ -1,8 +1,13 @@
 const path = require("path");
 const webpack = require("webpack");
+const HtmlWebPackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-    entry: "./src/base.js",
+    entry: {
+        main: "./src/base.js"
+    },
+    target: 'web',
+    devtool: "#source-map",
     mode: "development",
     module: {
         rules: [
@@ -14,22 +19,33 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                use: ["style-loader", "css-loader"]
-            }
+                use: [
+                    {loader: "style-loader"},
+                    {loader: "css-loader"},
+                ]
+            },
+            {
+                test: /\.html$/,
+                use: [{loader: "html-loader"}]
+            },
+            {
+                test: /\.(png|svg|jpg|gif)$/,
+                use: ['file-loader']
+            },
         ]
     },
     resolve: { extensions: ["*", ".js", ".jsx"] },
     output: {
-        path: path.resolve(__dirname, "dist/"),
+        path: path.resolve(__dirname, "dist"),
         publicPath: "/dist/",
         filename: "bundle.js"
     },
-    devServer: {
-        contentBase: path.join(__dirname, "public/"),
-        port: 3000,
-        publicPath: "http://localhost:3000/dist/",
-        hotOnly: true,
-        openPage: "./base.html",
-    },
-    plugins: [new webpack.HotModuleReplacementPlugin()]
+    plugins: [
+        //new webpack.HotModuleReplacementPlugin(),
+        new HtmlWebPackPlugin({
+            template: "./public/base.html",
+            filename: "./base.html",
+            excludeChunks: [ 'server' ]
+        })
+    ]
 };

@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import './css/navbar.css'
 
 export class Navbar extends Component {
@@ -15,9 +14,9 @@ export class Navbar extends Component {
                         <i className="fas fa-bars nav-icons"></i>
                     </button>
 
-                    <Link to="/" >
+                    <a href="/" >
                         Asperanto
-                    </Link>
+                    </a>
                 </div>
 
                 <div className="center">
