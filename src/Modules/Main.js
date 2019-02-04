@@ -14,8 +14,8 @@ export class Main extends Component {
     render() {
         let search;
 
-        if (this.props.searchBox.activated)
-            search = <Search searchBox={this.props.searchBox} getAddInfo={this.props.getAddInfo}/>;
+        if (this.props.state.searchBox.activated)
+            search = <Search state={this.props.state} getAddInfo={this.props.getAddInfo}/>;
         else
             search = null;
 

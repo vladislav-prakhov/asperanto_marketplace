@@ -99,7 +99,7 @@ class App extends Component{
             <div className="wrapper" onClick={ this.closeModalWindows }>
                 <Navbar sidebarToggle={ this.sidebarChangeState } searchBoxToggle={ this.searchBoxPopUp } searchBoxQuery={ this.getSearchBoxQuery }/>
                 {sidebar}
-                <Main searchBox={ this.state.searchBox } getAddInfo={this.getSearchBoxAdditionalInfo}/>
+                <Main state={ this.state } getAddInfo={this.getSearchBoxAdditionalInfo}/>
                 <Footer/>
             </div>
         );

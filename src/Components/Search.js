@@ -8,6 +8,7 @@ export class Search extends Component {
 
         this.ignoreClick = this.ignoreClick.bind(this);
         this.isChecked = this.isChecked.bind(this);
+        this.switchClassDependingOnSidebar = this.switchClassDependingOnSidebar.bind(this);
     }
 
     ignoreClick(e) {
@@ -15,12 +16,19 @@ export class Search extends Component {
     }
 
     isChecked(value) {
-        return this.props.searchBox.additionalInfo.typeOfSearch == value;
+        return this.props.state.searchBox.additionalInfo.typeOfSearch == value;
+    }
+
+    switchClassDependingOnSidebar() {
+        if (this.props.state.sidebar)
+            return 'searchBox-sidebar-toggled';
+        else
+            return '';
     }
 
     render() {
         return (
-            <div className={ "searchBox" } onClick={ this.ignoreClick }>
+            <div className={ "searchBox "+this.switchClassDependingOnSidebar() } onClick={ this.ignoreClick }>
                 <section className={ "searchBox-tips" }>
                     Подсказки по поисковому запросу
                 </section>
