@@ -3,6 +3,7 @@ import { Goods } from '../Pages/Goods.js';
 import { Category } from '../Pages/Category.js';
 import { Home } from '../Pages/Home.js';
 import { Search } from '../Components/Search';
+import { Organization } from '../Pages/Organization';
 import './css/main.css';
 
 
@@ -23,7 +24,7 @@ export class Main extends Component {
             <main className="main">
                 {search}
 
-                <Home/>
+                <Organization/>
             </main>
         )};
 }

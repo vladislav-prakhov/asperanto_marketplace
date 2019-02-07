@@ -1,0 +1,22 @@
+.main-organization {
+    display: grid;
+    grid-template-rows: [start-header] 1fr [end-header start-products] 3fr [end-products start-services] 3fr [end-services];
+    grid-template-areas:
+        "header"
+        "products"
+        "services";
+    grid-row-gap: 20px;
+    padding: 10px 10px 10px 10px;
+}
+
+.header-organziation {
+    grid-area: header;
+}
+
+.products-organization {
+    grid-area: products;
+}
+
+.services-organization {
+    grid-area: services;
+}
