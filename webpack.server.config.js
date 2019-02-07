@@ -4,12 +4,12 @@ const nodeExternals = require('webpack-node-externals');
 
 module.exports = {
     entry: {
-        server: './src/Server/base.js',
+        server: './src/Server/server.js',
     },
     output: {
         path: path.join(__dirname, 'dist'),
         publicPath: '/dist/',
-        filename: 'bundle.js'
+        filename: 'server.js'
     },
     target: 'node',
     node: {

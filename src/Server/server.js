@@ -3,7 +3,7 @@ import express from 'express';
 
 const app = express(),
     DIST_DIR = __dirname,
-    HTML_FILE = path.join(DIST_DIR, '../../public/base.html');
+    HTML_FILE = path.join(DIST_DIR, '../dist/base.html');
 
 app.use(express.static(DIST_DIR));
 

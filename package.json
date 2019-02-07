@@ -30,7 +30,7 @@
   "scripts": {
     "test": "test",
     "start": "webpack-dev-server --open",
-    "start-new": "node ./dist/bundle.js",
+    "start-new": "node ./dist/server.js",
     "build": "rmdir dist /s /q && webpack --mode development --config webpack.server.config.js && webpack --mode development",
     "build-prod": "webpack --mode production"
   },
