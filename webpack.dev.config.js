@@ -4,13 +4,24 @@ const HtmlWebPackPlugin = require("html-webpack-plugin");
 
 module.exports = {
     entry: {
-        main: "./src/base.js"
+        main: ['webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000', "./src/base.js"]
     },
     target: 'web',
     devtool: "#source-map",
     mode: "development",
     module: {
         rules: [
+            {
+                enforce: "pre",
+                test: /\.(js|jsx)$/,
+                exclude: /node_modules/,
+                loader: "eslint-loader",
+                options: {
+                    emitWarning: true,
+                    failOnError: false,
+                    failOnWarning: false
+                }
+            },
             {
                 test: /\.(js|jsx)$/,
                 exclude: /(node_modules|bower_components)/,
@@ -41,11 +52,12 @@ module.exports = {
         filename: "bundle.js"
     },
     plugins: [
-        //new webpack.HotModuleReplacementPlugin(),
+        new webpack.HotModuleReplacementPlugin(),
         new HtmlWebPackPlugin({
             template: "./public/base.html",
             filename: "./base.html",
             excludeChunks: [ 'server' ]
-        })
+        }),
+        new webpack.NoEmitOnErrorsPlugin()
     ]
 };

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './css/organization.css';
 
 export class Organization extends Component {
     render() {

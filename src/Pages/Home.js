@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import "./css/home.css";
 
 export class Home extends Component {
@@ -10,7 +9,7 @@ export class Home extends Component {
     render () {
         return (
             <div className="main-home">
-                <a href="/category"><h1>Категории</h1></a>
+                <a><h1>Категории</h1></a>
             </div>
         );
     }
