@@ -30,15 +30,52 @@
     
 Остальные файлы касаются настройки приложения.
 
-###Работа и запуск приложения
+###Запуск приложения
 Для работы с приолжением необходимо установить последнюю версию Node.js и npm. https://nodejs.org/en/
 
-После установки в корневой папке приложения нужно написать 
+* После установки в корневой папке приложения нужно написать 
 
 ```
 npm install
-npm start
 ``` 
 
-для запуска development сервера по адресу localhost:3000. 
+* При работе в Windows в файле package.json следующие строчки должны выглядеть так (это стоит по умолчанию):
+
+```
+"scripts": {
+    "test": "test",
+    "start": "node ./dist/server.js",
+    "build-dev": "rmdir /s /q ./dist && webpack --mode development ...",
+    "build-prod": "rmdir /s /q ./dist  && webpack --mode production ..."
+  },
+```
+
+* При работе в linux в этом же файле эти же строчки должны выглядеть так:
+
+```
+"scripts": {
+    "test": "test",
+    "start": "node ./dist/server.js",
+    "build-dev": "rm -r ./dist && webpack --mode development ...",
+    "build-prod": "rm -r ./dist  && webpack --mode production ..."
+  },
+```
+
+* Далее, для создания development версии (hot-reloading) необходимо выполнить
+
+```
+npm run build-dev
+```
+
+* Или, для создания production версии (сжатые скрипты и ксс файлы) выполнить
+
+```
+npm run build-prod
+```
+
+* Теперь можно запустить сервер по адресу localhost:8080 командой
+
+```
+npm start
+```
 
