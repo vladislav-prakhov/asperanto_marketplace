@@ -31,8 +31,8 @@
   "scripts": {
     "test": "test",
     "start": "node ./dist/server.js",
-    "build-dev": "rmdir /s /q ./dist && webpack --mode development --config webpack.server.config.js && webpack --mode development --config webpack.dev.config.js",
-    "build-prod": "rmdir /s /q ./dist && webpack --mode production --config webpack.server.config.js && webpack --mode production --config webpack.prod.config.js"
+    "build-dev": "rmdir /s /q dist && webpack --mode development --config webpack.server.config.js && webpack --mode development --config webpack.dev.config.js",
+    "build-prod": "rmdir /s /q dist && webpack --mode production --config webpack.server.config.js && webpack --mode production --config webpack.prod.config.js"
   },
   "repository": {
     "type": "git",

@@ -45,8 +45,8 @@ npm install
 "scripts": {
     "test": "test",
     "start": "node ./dist/server.js",
-    "build-dev": "rmdir /s /q ./dist && webpack --mode development ...",
-    "build-prod": "rmdir /s /q ./dist  && webpack --mode production ..."
+    "build-dev": "rmdir /s /q dist && webpack --mode development ...",
+    "build-prod": "rmdir /s /q dist  && webpack --mode production ..."
   },
 ```
 
