@@ -5,13 +5,21 @@ export class Organization extends Component {
     render() {
         return (
             <div className={ "main-organization" }>
-                <div className={ "header-organization" }>
+                <nav className={"nav-organization"}>
+                    <a href={"#"}>Описание</a>
+
+                    <a href={"#"}>Товары</a>
+
+                    <a href={"#"}>Контакты</a>
+                </nav>
+
+                <div className={"description-organization"}>
+                    Хуемое
                 </div>
 
-                <div className={ "products-orgqanization" }>
-                </div>
+                <div className={"quick-info-organization"}>
+                    <div className={"quick-info-image"}/>
 
-                <div className={ "services-organization" }>
                 </div>
             </div>
         )

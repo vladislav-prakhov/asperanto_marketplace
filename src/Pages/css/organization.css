@@ -1,23 +1,45 @@
 .main-organization {
     display: grid;
-    grid-template-rows: [start-header] 1fr [end-header start-products] 3fr [end-products start-services] 3fr [end-services];
+    grid-template-rows: [start-nav] 40px [end-nav start-quick-info start-description] 310px [end-quick-info] 1fr [end-description];
+    grid-template-columns: [start-body] 15fr [end-body start-quick-info] 5fr [end-quick-info];
     grid-template-areas:
-        "header"
-        "products"
-        "services";
-    grid-row-gap: 20px;
-    padding: 10px 10px 10px 10px;
+        "nav quick-info"
+        "description quick-info"
+        "description .";
     height: 100%;
 }
 
-.header-organziation {
-    grid-area: header;
+.nav-organization {
+    grid-area: nav;
+    background-color: #ddd;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
 }
 
-.products-organization {
-    grid-area: products;
+.nav-organization a {
+    color: black;
+    padding: 5px 10px 5px 10px;
 }
 
-.services-organization {
-    grid-area: services;
+.quick-info-organization {
+    grid-area: quick-info;
 }
+
+.quick-info-image {
+    background-image: url('../../../public/img/oil_gas.jpg');
+    height: 200px;
+    background-size: cover;
+    background-attachment: scroll;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-right: 20px;
+    margin-left: 20px;
+
+}
+
+
+.description-organization {
+    grid-area: description;
+}
+

@@ -2,7 +2,7 @@
   "name": "asperanto",
   "version": "1.0.0",
   "description": "marketplace",
-  "main": "src/Server/base.js",
+  "main": "src/base.js",
   "dependencies": {
     "express": "^4.16.4",
     "react": "^16.7.0",
@@ -31,8 +31,8 @@
   "scripts": {
     "test": "test",
     "start": "node ./dist/server.js",
-    "build-dev": "rmdir dist /s /q && webpack --mode development --config webpack.server.config.js && webpack --mode development --config webpack.dev.config.js",
-    "build-prod": "rmdir dist /s /q && webpack --mode production --config webpack.server.config.js && webpack --mode production --config webpack.prod.config.js"
+    "build-dev": "rm -r ./dist && webpack --mode development --config webpack.server.config.js && webpack --mode development --config webpack.dev.config.js",
+    "build-prod": "rm -r ./dist && webpack --mode production --config webpack.server.config.js && webpack --mode production --config webpack.prod.config.js"
   },
   "repository": {
     "type": "git",

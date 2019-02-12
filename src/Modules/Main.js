@@ -24,7 +24,7 @@ export class Main extends Component {
             <main className="main">
                 {search}
 
-                <Category/>
+                <Organization/>
             </main>
         )}
 }
