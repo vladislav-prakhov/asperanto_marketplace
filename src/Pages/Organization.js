@@ -1,26 +1,31 @@
 import React, { Component } from 'react';
 import './css/organization.css';
+import { Description } from './body_components/Description';
+import { Goods } from './Goods';
+import { Contacts } from './Contacts';
 
 export class Organization extends Component {
     render() {
+        let body_component = <Description/>;
+
+        if (this.props.body_org == 'desc')
+            body_component = <Description/>
+        else if (this.props.body_org == 'goods')
+            body_component = <Goods/>
+        else if (this.props.body_org == 'contacts')
+            body_component = <Contacts/>
+
         return (
-            <div className={ "main-organization" }>
-                <nav className={"nav-organization"}>
-                    <a href={"#"}>Описание</a>
+            <div className={"main-organization"}>
+                <div className={"name-organization"}>Asperanto</div>
 
-                    <a href={"#"}>Товары</a>
-
-                    <a href={"#"}>Контакты</a>
-                </nav>
-
-                <div className={"description-organization"}>
-                    Хуемое
+                <div className={'nav-organization'}>
+                    <a>Описание</a>
+                    <a>Товары и услуги</a>
+                    <a>Контакты</a>
                 </div>
 
-                <div className={"quick-info-organization"}>
-                    <div className={"quick-info-image"}/>
-
-                </div>
+                <div className={"body-organization"}>{body_component}</div>
             </div>
         )
     }

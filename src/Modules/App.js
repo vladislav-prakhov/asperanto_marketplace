@@ -17,14 +17,22 @@ class App extends Component{
                 additionalInfo: {
                     typeOfSearch: 'goods',
                 },
-            }
+            },
+            organizationBody: 'desc',
         };
 
+        this.organzationBodyChange = this.organzationBodyChange.bind(this);
         this.sidebarChangeState = this.sidebarChangeState.bind(this);
         this.searchBoxPopUp = this.searchBoxPopUp.bind(this);
         this.closeModalWindows = this.closeModalWindows.bind(this);
         this.getSearchBoxAdditionalInfo = this.getSearchBoxAdditionalInfo.bind(this);
         this.getSearchBoxQuery = this.getSearchBoxQuery.bind(this);
+    }
+
+    organizationBodyChange(elem) {
+        this.setState(
+            {organizationBody: elem}
+        )
     }
 
     sidebarChangeState() {
@@ -98,7 +106,7 @@ class App extends Component{
             <div className="wrapper" onClick={ this.closeModalWindows }>
                 <Navbar sidebarToggle={ this.sidebarChangeState } searchBoxToggle={ this.searchBoxPopUp } searchBoxQuery={ this.getSearchBoxQuery }/>
                 {sidebar}
-                <Main state={ this.state } getAddInfo={this.getSearchBoxAdditionalInfo}/>
+                <Main state={ this.state } organizationBodyChange={this.organizationBodyChange} getAddInfo={this.getSearchBoxAdditionalInfo}/>
                 <Footer/>
             </div>
         );

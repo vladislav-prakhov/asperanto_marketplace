@@ -1,45 +1,37 @@
 .main-organization {
     display: grid;
-    grid-template-rows: [start-nav] 40px [end-nav start-quick-info start-description] 310px [end-quick-info] 1fr [end-description];
-    grid-template-columns: [start-body] 15fr [end-body start-quick-info] 5fr [end-quick-info];
+    grid-template-rows: [start-name] 50px [end-name start-nav] 35px [end-nav start-body] 1fr [end-body];
     grid-template-areas:
-        "nav quick-info"
-        "description quick-info"
-        "description .";
+        "name"
+        "nav"
+        "body";
     height: 100%;
+    width: calc(100vw - 400px);
+    justify-self: center;
+    background-color: white;
+    grid-row-gap: 20px;
+}
+
+.name-organization {
+    grid-area: name;
+    padding: 10px 0 10px 0;
+    margin: 0 15px 0 15px;
+    font-size: 28px;
+    font-weight: bold;
+    border-top: 2px solid #c5c5c5;
 }
 
 .nav-organization {
-    grid-area: nav;
-    background-color: #ddd;
     display: flex;
     flex-direction: row;
-    justify-content: start;
+    align-content: center;
+    background-color: #aaa;
+    grid-area: nav;
+    height: 100%;
 }
 
 .nav-organization a {
-    color: black;
-    padding: 5px 10px 5px 10px;
+    align-items: center;
+    font-size: 18px;
+    padding-left: 10px;
 }
-
-.quick-info-organization {
-    grid-area: quick-info;
-}
-
-.quick-info-image {
-    background-image: url('../../../public/img/oil_gas.jpg');
-    height: 200px;
-    background-size: cover;
-    background-attachment: scroll;
-    background-repeat: no-repeat;
-    background-position: center;
-    margin-right: 20px;
-    margin-left: 20px;
-
-}
-
-
-.description-organization {
-    grid-area: description;
-}
-
