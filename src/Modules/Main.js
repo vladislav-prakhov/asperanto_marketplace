@@ -3,19 +3,15 @@ import { Goods } from '../Pages/Goods.js';
 import { Category } from '../Pages/Category.js';
 import { Home } from '../Pages/Home.js';
 import { Search } from '../Components/Search';
-import { Organization } from '../Pages/Organization';
+import { Organization } from '../Pages/Organization/Organization';
 import './css/main.css';
 import { Switch, Route } from "react-router-dom";
+
+
 
 export class Main extends Component {
     constructor(props) {
         super(props);
-    }
-
-    organizationBodyChange(elem) {
-        this.setState(
-            {organizationBody: elem}
-        )
     }
 
     render() {
@@ -33,7 +29,7 @@ export class Main extends Component {
                 <Switch>
                     <Route exact path={'/'} component={Home}/>
                     <Route path={'/categories'} component={Category}/>
-                    <Route path={'/organization'} render={(props) => <Organization BodyChange={this.props.organizationBodyChange} isAuthed={true}/>
+                    <Route path={'/organization'} component={Organization}/>
                     <Route path={'/goods'} component={Goods}/>
                 </Switch>
             </main>

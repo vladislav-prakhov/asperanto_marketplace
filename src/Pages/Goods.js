@@ -6,7 +6,7 @@ export function Goods() {
         <div className="main-goods">
             <div className="products">
                 <div className="product-window">
-                    <img src="#" className="product-pic" alt="norm pic"></img>
+                    <div className="product-pic"/>
 
                         <div className="product-meta">
                             <div className="product-name">Буровая установка</div>
@@ -23,7 +23,7 @@ export function Goods() {
                 </div>
 
                 <div className="product-window">
-                    <img src="#" className="product-pic" alt="norm pic"></img>
+                    <div className="product-pic"/>
 
                     <div className="product-meta">
                         <div className="product-name">Буровая установка</div>
@@ -40,7 +40,7 @@ export function Goods() {
                 </div>
 
                 <div className="product-window">
-                    <img src="#" className="product-pic" alt="norm pic"></img>
+                    <div className="product-pic"/>
 
                     <div className="product-meta">
                         <div className="product-name">Буровая установка</div>
@@ -57,7 +57,7 @@ export function Goods() {
                 </div>
 
                 <div className="product-window">
-                    <img src="#" className="product-pic" alt="norm pic"></img>
+                    <div className="product-pic"/>
 
                     <div className="product-meta">
                         <div className="product-name">Буровая установка</div>
@@ -74,7 +74,7 @@ export function Goods() {
                 </div>
 
                 <div className="product-window">
-                    <img src="#" className="product-pic" alt="norm pic"></img>
+                    <div className="product-pic"/>
 
                     <div className="product-meta">
                         <div className="product-name">Буровая установка</div>
@@ -91,7 +91,7 @@ export function Goods() {
                 </div>
 
                 <div className="product-window">
-                    <img src="#" className="product-pic" alt="norm pic"></img>
+                    <div className="product-pic"/>
 
                     <div className="product-meta">
                         <div className="product-name">Буровая установка</div>
@@ -108,7 +108,7 @@ export function Goods() {
                 </div>
 
                 <div className="product-window">
-                    <img src="#" className="product-pic" alt="norm pic"></img>
+                    <div className="product-pic"/>
 
                     <div className="product-meta">
                         <div className="product-name">Буровая установка</div>

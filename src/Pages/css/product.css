@@ -68,6 +68,13 @@
     position: relative;
     display: block;
     justify-self: center;
+    background-image: url("../../../public/img/nopic.png");
+    background-size: cover;
+    background-attachment: scroll;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 210px;
+    width: 210px;
 }
 
 .product-meta { /* Блок, в котором находятся название товара, цена, поставщик (мета информация),
