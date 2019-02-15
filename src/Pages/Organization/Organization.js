@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../css/organization.css';
+import './css/organization.css';
 import { Description } from './Description';
 import { Goods } from '../Goods';
 import { Contacts } from './Contacts';
@@ -39,9 +39,9 @@ export class Organization extends Component {
 
             return (
             <div className={"main-organization"}>
-                <div className={"name-organization"}>Asperanto</div>
+                <h1 className={"name-organization"}>Asperanto</h1>
 
-                <div className={'nav-organization'} onClick={console.log(this.state.bodyOrg)}>
+                <div className={'nav-organization'} >
                     <a onClick={() => this.changeBody('Description')}>Описание</a>
                     <a onClick={() => this.changeBody('Goods')}>Товары</a>
                     <a onClick={() => this.changeBody('Services')}>Услуги</a>

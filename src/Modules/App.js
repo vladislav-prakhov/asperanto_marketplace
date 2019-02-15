@@ -105,4 +105,8 @@ class App extends Component{
     }
 }
 
+if(typeof(module.hot) !== 'undefined') {
+    module.hot.accept() // eslint-disable-line no-undef
+}
+
 export default App;

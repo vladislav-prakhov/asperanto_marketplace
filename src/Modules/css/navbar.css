@@ -12,7 +12,7 @@
     grid-template-columns: [leftPart-start] 170px [leftPart-end center-start] 1fr [center-end rightPart-start] 170px;
     align-items: center;
     grid-template-rows: 1fr 1fr;
-    background-color: white;
+    background-color: #444;
     grid-area: header;
     box-sizing: inherit;
 }
@@ -29,14 +29,24 @@
     display: inline-block;
     font-size: 1.25rem;
     white-space: nowrap;
+    color: white;
+}
+
+.navbar-left a:hover {
+    color: white !important;
 }
 
 .navbar-left > button {
     display: inline;
-    background-color: white;
+    background-color: #444;
     border: 0;
     margin-right: 10px;
     margin-left: 10px;
+    color: white;
+}
+
+.navbar-left button:hover {
+    color: white !important;
 }
 
 /* ------------------------------------------------------ Центр (поисковая строка) ---------------------------------------------------- */
@@ -117,6 +127,7 @@
 .nickname-nav { /* Красиво отображет имя пользователя */
     margin-top: 0.2rem;
     font-weight: bold;
+    color: white;
 }
 
 /* ------------------------------------------------------- Категории ----------------------------------------------------------- */
@@ -129,6 +140,15 @@
     text-align: center;
 }
 
+.categories a {
+    color: #ddd !important;
+}
+
+.categories a:hover {
+    color: #ddd !important;
+}
+
 .categories-all {
     font-weight: bold;
+    color: white;
 }
