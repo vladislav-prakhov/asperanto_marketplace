@@ -27,7 +27,7 @@ export function Category() {
             </div>
 
             <div className="category-products">
-                <Goods />
+                <Goods shrinked={true}/>
             </div>
         </div>
     );

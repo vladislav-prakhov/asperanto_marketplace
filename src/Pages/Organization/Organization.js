@@ -30,9 +30,9 @@ export class Organization extends Component {
         if (this.state.bodyOrg === 'Description')
             body_component = <Description/>;
         else if (this.state.bodyOrg === 'Goods')
-            body_component = <Goods/>;
+            body_component = <Goods shrinked={true}/>;
         else if (this.state.bodyOrg === 'Services')
-            body_component = <Services/>;
+            body_component = <Services shrinked={true}/>;
         else if (this.state.bodyOrg === 'Contacts')
             body_component = <Contacts/>;
 
@@ -46,6 +46,7 @@ export class Organization extends Component {
                     <a onClick={() => this.changeBody('Goods')}>Товары</a>
                     <a onClick={() => this.changeBody('Services')}>Услуги</a>
                     <a onClick={() => this.changeBody('Contacts')}>Контакты</a>
+                    <a className={'call-organization'}>Свзяаться с представителем</a>
                 </div>
 
                 <div className={"body-organization"}>{body_component}</div>

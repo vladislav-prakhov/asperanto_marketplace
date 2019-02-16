@@ -11,6 +11,36 @@
 
 /* ----------------------------------------------------- Окошки с товарами -------------------------------------------------------- */
 
+.products-when-page-margined { /* Блок под все товары (карточки с товарами) */
+    grid-area: products;
+    display: grid;
+    grid-template-columns: [start] repeat(2, 1fr) [end];
+    grid-auto-rows: 420px;
+    overflow: auto;
+    padding-bottom: 10px;
+    margin-top: 20px;
+    padding-left: 15px;
+    border-top: 1px solid #ccc;
+}
+
+@media (min-width: 1550px) {
+    .products-when-page-margined {
+        grid-template-columns: [start] repeat(3, 1fr) [end];
+    }
+}
+
+@media (min-width: 1800px) {
+    .products-when-page-margined {
+        grid-template-columns: [start] repeat(4, 1fr) [end];
+    }
+}
+
+@media (min-width: 2200px) {
+    .products-when-page-margined {
+        grid-template-columns: [start] repeat(5, 1fr) [end];
+    }
+}
+
 .products { /* Блок под все товары (карточки с товарами) */
     grid-area: products;
     display: grid;
@@ -18,8 +48,8 @@
     grid-auto-rows: 420px;
     overflow: auto;
     padding-bottom: 10px;
-    margin-top: 25px;
-    margin-left: 15px;
+    margin-top: 20px;
+    padding-left: 15px;
     border-top: 1px solid #ccc;
 }
 
@@ -67,21 +97,22 @@
     position: relative;
     display: block;
     justify-self: center;
-    background-image: url("../../../public/img/oil_gas.jpg");
     background-size: cover;
     background-attachment: scroll;
     background-repeat: no-repeat;
     background-position: center;
     height: 210px;
-    width: 90%;
+    width: 240px;
+    margin-left: 15px;
+    margin-right: 20px;
 }
 
 .product-meta { /* Блок, в котором находятся название товара, цена, поставщик (мета информация),
                     также ссылки (либо "подробнее..." либо "написать контрагенту" и блок с дополнительными картинками */
     display: flex;
     flex-direction: column;
-    margin-right: 1rem;
-    margin-left: 1rem;
+    margin-right: 20px;
+    margin-left: 15px;
     line-height: 1.2rem;
     grid-area: meta;
     border-bottom: 2px solid #ccc
@@ -108,8 +139,8 @@
 .product-links {
     display: flex;
     flex-direction: column;
-    margin-right: 1rem;
-    margin-left: 1rem;
+    margin-right: 20px;
+    margin-left: 15px;
     line-height: 1.2rem;
     grid-area: links;
 }

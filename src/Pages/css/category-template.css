@@ -2,6 +2,8 @@
     display: grid;
     grid-template-rows: [start] calc(100vh - 155px) 65px 2fr [end];
     grid-template-areas: "category" "navbar" "products";
+    width: calc(100vw - 400px);
+    justify-self: center;
 }
 
 .category {
@@ -18,7 +20,7 @@
 }
 
 .wrap-category {
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0,0,0,0);
     display: grid;
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 200px 1fr;
