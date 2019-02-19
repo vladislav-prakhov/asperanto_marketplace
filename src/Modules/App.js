@@ -57,6 +57,13 @@ class App extends Component{
                         additionalInfo: this.state.searchBox.additionalInfo,
                     }},
             );
+
+        if (this.state.sidebar)
+            this.setState(
+                {
+                    sidebar: !this.state.sidebar,
+                }
+            )
     }
 
     getSearchBoxAdditionalInfo(e) {
@@ -90,16 +97,20 @@ class App extends Component{
         let sidebar;
 
         if (this.state.sidebar)
-            sidebar = <Sidebar/>;
+            sidebar = <Sidebar sidebarUntoggle={this.sidebarChangeState}/>;
         else
             sidebar = null;
 
         return (
-            <div className="wrapper" onClick={ this.closeModalWindows }>
-                <Navbar sidebarToggle={ this.sidebarChangeState } searchBoxToggle={ this.searchBoxPopUp } searchBoxQuery={ this.getSearchBoxQuery }/>
+            <div className={"wrapper"}>
                 {sidebar}
-                <Main state={ this.state } getAddInfo={this.getSearchBoxAdditionalInfo}/>
-                <Footer/>
+
+                <div className="wrapper-page" onClick={ this.closeModalWindows }>
+                    <Navbar sidebarToggle={ this.sidebarChangeState } searchBoxToggle={ this.searchBoxPopUp } searchBoxQuery={ this.getSearchBoxQuery }/>
+
+                    <Main state={ this.state } getAddInfo={this.getSearchBoxAdditionalInfo}/>
+                    <Footer/>
+                </div>
             </div>
         );
     }

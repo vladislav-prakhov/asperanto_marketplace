@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import './css/organization.css';
 import { Description } from './Description';
-import { Goods } from '../Goods';
+import { Suggestions } from '../Suggestions';
 import { Contacts } from './Contacts';
-import { Services } from '../Services';
 
 export class Organization extends Component {
     constructor(props) {
@@ -29,10 +28,10 @@ export class Organization extends Component {
 
         if (this.state.bodyOrg === 'Description')
             body_component = <Description/>;
-        else if (this.state.bodyOrg === 'Goods')
-            body_component = <Goods shrinked={true}/>;
+        else if (this.state.bodyOrg === 'Cards')
+            body_component = <Suggestions shrinked={true} typeOfPage={'goods'}/>;
         else if (this.state.bodyOrg === 'Services')
-            body_component = <Services shrinked={true}/>;
+            body_component = <Suggestions shrinked={true} typeOfPage={'services'}/>;
         else if (this.state.bodyOrg === 'Contacts')
             body_component = <Contacts/>;
 
@@ -43,7 +42,7 @@ export class Organization extends Component {
 
                 <div className={'nav-organization'} >
                     <a onClick={() => this.changeBody('Description')}>Описание</a>
-                    <a onClick={() => this.changeBody('Goods')}>Товары</a>
+                    <a onClick={() => this.changeBody('Cards')}>Товары</a>
                     <a onClick={() => this.changeBody('Services')}>Услуги</a>
                     <a onClick={() => this.changeBody('Contacts')}>Контакты</a>
                     <a className={'call-organization'}>Свзяаться с представителем</a>

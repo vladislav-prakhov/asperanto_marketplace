@@ -12,24 +12,22 @@ export class Navbar extends Component {
             <nav className="navbar">
                 <div className="navbar-left">
                     <button className="" type="button" onClick={ this.props.sidebarToggle }>
-                        <i className="fas fa-bars nav-icons"></i>
+                        <i className="fas fa-bars nav-icons"/>
                     </button>
 
-                    <Link to="/" >
-                        Asperanto
-                    </Link>
+                    <Link to="/" >Asperanto</Link>
                 </div>
 
                 <div className="center">
                     <form action="" method="get">
-                        <input type="text" placeholder="Найти" onClick={ this.props.searchBoxToggle } onChange={ this.props.searchBoxQuery }></input>
-                        <button type="button"><i className="fas fa-search nav-icons"></i></button>
+                        <input type="text" placeholder="Найти" onClick={ this.props.searchBoxToggle } onChange={ this.props.searchBoxQuery }/>
+                        <button type="button"><i className="fas fa-search nav-icons"/></button>
                     </form>
                 </div>
 
                 <div className="navbar-right">
                     <a href="#">
-                        <div className="circle-nav"></div>
+                        <div className="circle-nav"/>
                         <span className="nickname-nav">А.И. Гайдамака</span>
                     </a>
                 </div>

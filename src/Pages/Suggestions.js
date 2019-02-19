@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import "./css/product.css";
+import "./css/suggestions.css";
+import './css/pics.css';
 
-export class Goods extends Component {
+export class Suggestions extends Component {
     constructor(props) {
         super(props);
     }
@@ -15,6 +16,13 @@ export class Goods extends Component {
             shrink = 'products-when-page-margined';
         else
             shrink = 'products';
+
+        let linkToGur = 'Просмотреть товар';
+
+        if (this.props.typeOfPage === 'goods')
+            linkToGur = 'Просмотреть товар';
+        if (this.props.typeOfPage === 'services')
+            linkToGur = 'Узнать подробнее';
 
         return (
             <div className="main-goods">
@@ -30,7 +38,7 @@ export class Goods extends Component {
                             </div>
 
                             <div className="product-links">
-                                <a className="product-contact">Написать контрагенту</a>
+                                <a className="product-contact">{linkToGur}</a>
 
                                 <a className="product-fav">Добавить в избранное</a>
                             </div>
@@ -47,7 +55,7 @@ export class Goods extends Component {
                         </div>
 
                         <div className="product-links">
-                            <a className="product-contact">Написать контрагенту</a>
+                            <a className="product-contact">{linkToGur}</a>
 
                             <a className="product-fav">Добавить в избранное</a>
                         </div>
@@ -64,7 +72,7 @@ export class Goods extends Component {
                         </div>
 
                         <div className="product-links">
-                            <a className="product-contact">Написать контрагенту</a>
+                            <a className="product-contact">{linkToGur}</a>
 
                             <a className="product-fav">Добавить в избранное</a>
                         </div>
@@ -81,7 +89,7 @@ export class Goods extends Component {
                         </div>
 
                         <div className="product-links">
-                            <a className="product-contact">Написать контрагенту</a>
+                            <a className="product-contact">{linkToGur}</a>
 
                             <a className="product-fav">Добавить в избранное</a>
                         </div>
@@ -98,7 +106,7 @@ export class Goods extends Component {
                         </div>
 
                         <div className="product-links">
-                            <a className="product-contact">Написать контрагенту</a>
+                            <a className="product-contact">{linkToGur}</a>
 
                             <a className="product-fav">Добавить в избранное</a>
                         </div>
@@ -115,7 +123,7 @@ export class Goods extends Component {
                         </div>
 
                         <div className="product-links">
-                            <a className="product-contact">Написать контрагенту</a>
+                            <a className="product-contact">{linkToGur}</a>
 
                             <a className="product-fav">Добавить в избранное</a>
                         </div>
@@ -132,7 +140,7 @@ export class Goods extends Component {
                         </div>
 
                         <div className="product-links">
-                            <a className="product-contact">Написать контрагенту</a>
+                            <a className="product-contact">{linkToGur}</a>
 
                             <a className="product-fav">Добавить в избранное</a>
                         </div>
@@ -141,7 +149,7 @@ export class Goods extends Component {
 
                 <div className="product-filters-wrapper">
                     <div className="product-filters">
-                        <h3>Показать результаты</h3>
+                        <h3>Фильтры</h3>
                     </div>
                 </div>
             </div>

@@ -16,25 +16,20 @@ body {
     margin: 0;
     font-family: 'IBM Plex Sans', sans-serif;
     z-index: 0;
-    overflow: auto;
+    overflow-y: scroll;
 }
 
 #root {
     height: 100%;
 }
 
-.wrapper-sidebar-toggled {
+.wrapper {
     height: 100%;
-    display: grid;
-    grid-template-rows: [header] 90px [body] 1fr [footer] 42px [end];
-    grid-template-columns: 250px 1fr;
-    grid-template-areas:
-            "header header"
-            "sidebar main"
-            "footer footer";
+    transition-property: all;
+    transition-duration: 1s;
 }
 
-.wrapper {
+.wrapper-page {
     height: 100%;
     display: grid;
     grid-template-rows: [navbar-start] 90px [navbar-end body-start] 1fr [body-end footer-start] 42px [footer-end];

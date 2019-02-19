@@ -17,7 +17,7 @@ module.exports = {
             new UglifyJsPlugin({
                 cache: true,
                 parallel: true,
-                sourceMap: true // set to true if you want JS source maps
+                sourceMap: false // set to true if you want JS source maps
             }),
             new OptimizeCSSAssetsPlugin({})
         ]
@@ -31,6 +31,17 @@ module.exports = {
                 options: { presets: ["@babel/env"] }
             },
             {
+                // Loads the javacript into html template provided.
+                // Entry point is set below in HtmlWebPackPlugin in Plugins
+                test: /\.html$/,
+                use: [
+                    {
+                        loader: "html-loader",
+                        options: { minimize: true }
+                    }
+                ]
+            },
+            {
                 // Loads images into CSS and Javascript files
                 test: /\.jpg$/,
                 use: [{loader: "url-loader"}]
@@ -41,24 +52,19 @@ module.exports = {
                 test: /\.css$/,
                 use: [MiniCssExtractPlugin.loader, 'css-loader']
             },
-            {
-                test: /\.html$/,
-                use: [{loader: "html-loader"}]
-            },
         ]
     },
     resolve: { extensions: ["*", ".js", ".jsx"] },
     output: {
         path: path.resolve(__dirname, "dist"),
-        publicPath: "/",
+        publicPath: "",
         filename: "bundle.js"
     },
     plugins: [
         //new webpack.HotModuleReplacementPlugin(),
         new HtmlWebPackPlugin({
             template: "./public/base.html",
-            filename: "./base.html",
-            excludeChunks: [ 'server' ]
+            filename: "./base.html"
         }),
         new MiniCssExtractPlugin({
             filename: "bundle.css",

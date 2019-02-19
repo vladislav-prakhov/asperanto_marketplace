@@ -14,7 +14,7 @@ app.use(webpackDevMiddleware(compiler, {
     publicPath: config.output.publicPath
 }));
 
-app.use(webpackHotMiddleware(compiler))
+app.use(webpackHotMiddleware(compiler));
 
 app.get('*', (req, res) => {
     res.sendFile(HTML_FILE)

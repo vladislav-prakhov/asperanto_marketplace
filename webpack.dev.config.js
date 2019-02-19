@@ -47,6 +47,7 @@ module.exports = {
             filename: "./base.html",
             excludeChunks: [ 'server' ]
         }),
+
         new webpack.NoEmitOnErrorsPlugin()
     ]
 };

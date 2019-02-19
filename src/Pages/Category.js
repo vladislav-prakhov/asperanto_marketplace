@@ -1,5 +1,5 @@
 import React from "react";
-import { Goods } from './Goods.js';
+import { Suggestions } from './Suggestions';
 import "./css/category-template.css";
 
 export function Category() {
@@ -27,7 +27,7 @@ export function Category() {
             </div>
 
             <div className="category-products">
-                <Goods shrinked={true}/>
+                <Suggestions shrinked={false} typeOfPage={'goods'}/>
             </div>
         </div>
     );

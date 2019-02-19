@@ -1,6 +1,63 @@
 .sidebar {
     display: grid;
-    grid-area: sidebar;
     height: 100%;
     background-color: #fafafa;
+    width: 260px;
+    z-index: 1000;
+    position: fixed;
+    grid-template-rows: [start-header] 45px [end-header start-body] 1fr [end-body];
+    grid-template-areas:
+        "header"
+        "body";
+    align-items: center;
+    margin-left: 0;
+    transition-property: margin-left;
+    transition-duration: 300ms;
+}
+
+.sidebar-none {
+    display: grid;
+    height: 100%;
+    background-color: #fafafa;
+    width: 260px;
+    z-index: 1000;
+    position: fixed;
+    grid-template-rows: [start-header] 45px [end-header start-body] 1fr [end-body];
+    grid-template-areas:
+            "header"
+            "body";
+    align-items: center;
+    margin-left: -260px;
+    transition-property: margin-left;
+    transition-duration: 300ms;
+}
+
+.sidebar-header {
+    display: flex;
+    align-content: center;
+    grid-area: header;
+}
+
+.sidebar-header > a {
+    display: inline;
+    font-size: 1.25rem;
+    white-space: nowrap;
+    color: #444;
+}
+
+.sidebar-header a:hover {
+    color: #444 !important;
+}
+
+.sidebar-header > button {
+    display: inline;
+    background-color: #fafafa;
+    border: 0;
+    margin-right: 10px;
+    margin-left: 10px;
+    color: #444;
+}
+
+.sidebar-header button:hover {
+    color: #444 !important;
 }

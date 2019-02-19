@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Goods } from '../Pages/Goods.js';
+import { Suggestions } from '../Pages/Suggestions';
 import { Category } from '../Pages/Category.js';
 import { Home } from '../Pages/Home.js';
 import { Search } from '../Components/Search';
@@ -30,7 +30,7 @@ export class Main extends Component {
                     <Route exact path={'/'} component={Home}/>
                     <Route path={'/categories'} component={Category}/>
                     <Route path={'/organization'} component={Organization}/>
-                    <Route path={'/goods'} component={Goods}/>
+                    <Route path={'/suggestions'} component={Suggestions}/>
                 </Switch>
             </main>
         )}
