@@ -3,6 +3,7 @@ import { Navbar } from './Navbar.js';
 import { Footer } from './Footer.js';
 import { Main } from './Main.js';
 import { Sidebar } from './Sidebar';
+import {Header} from "./Header";
 
 
 class App extends Component{
@@ -100,16 +101,18 @@ class App extends Component{
             sidebar = <Sidebar sidebarUntoggle={this.sidebarChangeState}/>;
         else
             sidebar = null;
-
+        $('#MobileHeaderModal').modal('hide');
         return (
-            <div className={"wrapper"}>
+            <div className="full-page">
+                <div className={"wrapper"}>
                 {sidebar}
 
-                <div className="wrapper-page" onClick={ this.closeModalWindows }>
-                    <Navbar sidebarToggle={ this.sidebarChangeState } searchBoxToggle={ this.searchBoxPopUp } searchBoxQuery={ this.getSearchBoxQuery }/>
-
-                    <Main state={ this.state } getAddInfo={this.getSearchBoxAdditionalInfo}/>
-                    <Footer/>
+                    <div className="wrapper-page" onClick={ this.closeModalWindows }>
+                        {/*<Navbar sidebarToggle={ this.sidebarChangeState } searchBoxToggle={ this.searchBoxPopUp } searchBoxQuery={ this.getSearchBoxQuery }/>*/}
+                        <Header/>
+                        <Main state={ this.state } getAddInfo={this.getSearchBoxAdditionalInfo}/>
+                        <Footer/>
+                    </div>
                 </div>
             </div>
         );

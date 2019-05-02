@@ -1,3 +1,4 @@
+
 .main-goods {
     display: grid;
     grid-template-columns: [start] auto [products-end filters-start] 300px [end];

@@ -1,0 +1,181 @@
+.org-rating-header {
+  height: 30px;
+}
+
+@media (max-width: 767px) {
+  .col.org-column {
+    padding: 10px 0px;
+    width: 0px;
+  }
+}
+
+@media (min-width: 768px) {
+  .col.org-column {
+    padding: 10px;
+  }
+}
+
+@media (min-width: 768px) {
+  .org-logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 110px;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 767px) {
+  .org-logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+    max-width: 100%;
+    padding: 10px;
+  }
+}
+
+@media (min-width: 768px) {
+  .org-logo > img {
+    width: 90px;
+    margin: auto 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .org-logo > img {
+    width: 130px;
+    margin: auto;
+  }
+}
+
+.org-information-name {
+  padding: 5px 10px 0 10px;
+  height: auto;
+}
+
+.org-information-name > h2 {
+  margin-bottom: 0px;
+}
+
+@media (min-width: 768px) {
+  .org-name-heading {
+    font-size: 18px;
+    font-weight: 600;
+  }
+}
+
+@media (max-width: 767px) {
+  .org-name-heading {
+    font-size: 16px;
+    font-weight: 600;
+    word-wrap: break-word;
+  }
+}
+
+.org-industry-links {
+  margin-top: 0px;
+  padding: 2px 0 2px 0px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+.org-industry-links > a {
+  color: #333;
+  font-size: 13px;
+  margin: 0px 15px 4px 0px;
+  white-space: nowrap;
+}
+
+.org-products {
+  display: block;
+  padding: 10px;
+  height: inherit;
+}
+
+.org-services {
+  display: block;
+  padding: 10px;
+  height: inherit;
+}
+
+.org-products-header {
+  padding: 0px 5px;
+}
+
+.org-services-header {
+  padding: 0px 5px;
+}
+
+.org-products-header > h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0px;
+}
+
+.org-services-header > h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0px;
+}
+
+.org-items {
+  width: 100%;
+  padding: 10px 0px;
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.org-item-example {
+  width: 250px;
+  height: 250px;
+  background: rgb(121,183,255);
+  margin-right: 5px;
+  margin-left: 5px;
+  flex: 0 0 auto;
+  display: block;
+}
+
+.org-item-pic {
+  height: 65%;
+  background: #999;
+  position: relative;
+}
+
+.org-item-pic > img {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  max-width: 250px;
+  max-height: 162px;
+}
+
+.org-item-info {
+  padding: 5px 5px;
+  height: 35%;
+  background: #fff;
+}
+
+.org-item-info > h4 {
+  font-size: 17px;
+  font-weight: 600;
+  color: black;
+}
+
+.org-item-info > h4 {
+  font-size: 13px;
+  font-weight: 600;
+  color: black;
+}
+
+.org-item-info > p {
+  font-size: 11px;
+  color: black;
+}
+

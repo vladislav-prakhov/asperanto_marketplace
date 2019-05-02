@@ -4,6 +4,13 @@
     padding-right: 0;
     padding-left: 0;
     width: 100%;
+    min-height: calc(100vh - 50px - 130px);
     grid-area: main;
     box-sizing: inherit;
+}
+
+.full-page {
+    font-family: 'Roboto';
+    background-color: rgb(240,240,250);
+    height: 100%;
 }

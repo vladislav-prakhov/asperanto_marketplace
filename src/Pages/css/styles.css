@@ -1,0 +1,356 @@
+.box-shadow {
+  background: #ffffff;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  /*padding: 10px;*/
+}
+
+.navbar-links {
+  margin-left: 15px;
+}
+
+a:hover {
+  color: #91d3ff;
+  text-decoration: initial;
+}
+
+.navbar-search {
+  margin: 0px 20px;
+}
+
+.btn.btn-info.like-button-mainpage-footer {
+  border-radius: 100%;
+  width: 50px;
+  height: 50px;
+  background-color: rgb(192,209,0);
+  margin: 0px 5px;
+}
+
+.align-self-center {
+  margin: 0px;
+}
+
+.card-footer {
+  display: inline-flex;
+}
+
+.align-self-center.mb-0 {
+  margin-left: 10px;
+}
+
+.card-header {
+  display: inline-flex;
+}
+
+.content-card-image {
+  width: 50px;
+  height: 50px;
+}
+
+.logo-and-name {
+  display: inline-flex;
+}
+
+.footer-mainpage-content {
+  display: inline-flex;
+}
+
+.main-content {
+  border-radius: 20px;
+}
+
+.offset-md-0.offset-lg-0.offset-xl-0 {
+  padding: 10px;
+}
+
+.align-self-center.mb-0 {
+  font-size: 17px;
+}
+
+.fa.fa-star-o.navbar-icon {
+  font-size: 25px;
+}
+
+.align-self-end.mb-0 {
+  font-size: 18px;
+}
+
+@media (max-width: 575px) {
+  .feed_panel_content {
+    margin-top: 20px;
+  }
+}
+
+@media (min-width: 576px) {
+  .feed_panel_content {
+    margin-top: 25px;
+  }
+}
+
+@media (max-width: 575px) {
+  .posts_column_name {
+    padding: 0px;
+  }
+}
+
+@media (min-width: 576px) {
+  .account-column {
+    padding: 10px;
+    text-align: center;
+  }
+}
+
+.account-column-name-text {
+  font-size: 20px;
+  font-family: Roboto;
+  text-align: center;
+  line-height: normal;
+}
+
+.mini-job-block {
+  font-size: 20px;
+  font-family: Roboto;
+  text-align: center;
+  line-height: normal;
+  padding: 5px 10px 5px 10px;
+}
+
+.account-column-name-text {
+  padding-top: 7px;
+  font-size: 20px;
+  font-family: Roboto;
+  text-align: center;
+  line-height: normal;
+  height: max-content;
+}
+
+.mini_job_title {
+  text-align: left;
+  color: rgb(59,32,0);
+  font-weight: 600;
+  padding: 5px 0px;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.mini_job_title:hover {
+  color: rgb(66,130,253);
+}
+
+.mini_job_footer_block {
+  display: inline-flex;
+  height: auto;
+  width: 100%;
+  /*padding: 0px 10px;*/
+}
+
+.mini_job_company_logo {
+  height: auto;
+  width: fit-content;
+}
+
+.mini_job_company_link_block {
+  width: auto;
+}
+
+.mini_job_company_link {
+  font-weight: 300;
+  font-size: 13px;
+  margin: 4px 0px 5px 5px;
+}
+
+.mini_job_city {
+  float: left;
+  font-size: 14px;
+}
+
+.mini_job_footer_block img {
+  height: 23px;
+  margin-top: auto;
+  float: left;
+}
+
+.column-panel-name {
+  background-color: rgb(255,255,255);
+  height: 40px;
+}
+
+.account-jobs-panel {
+  margin-bottom: 15px;
+  height: fit-content;
+  display: block;
+}
+
+.account-feed-panel {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  height: 100px;
+}
+
+.feed-panel-grey {
+  color: rgb(84,84,84);
+}
+
+.feed-feed-panel {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  height: initial;
+  padding: 10px;
+}
+
+.feed-panel-head {
+  display: block;
+  padding: 10px 0px 0px 0px;
+  height: 40px;
+}
+
+.feed-panel-title {
+  padding-top: 7px;
+  font-size: 17px;
+  font-weight: bold;
+  font-family: Roboto;
+  text-align: left;
+  line-height: normal;
+  letter-spacing: 1px;
+}
+
+.feed-panel-head-bar {
+  display: inline;
+  padding: 10px 0px;
+  height: 40px;
+  width: 100%;
+}
+
+.feed-panel-headbar-left {
+  display: inline-flex;
+  float: left;
+}
+
+.feed-panel-headbar-right {
+  display: inline-flex;
+  float: right;
+}
+
+.feed-panel-head-bar-creator {
+  text-align: left;
+  height: 100%;
+  margin-right: 15px;
+}
+
+.feed-panel-head-bar-creator a {
+  font-weight: 500;
+}
+
+.feed-panel-head-bar-pub-date {
+  text-align: left;
+}
+
+.feed-panel-head-bar-pub-date p {
+  margin-right: 15px;
+  margin-bottom: 0px;
+}
+
+.feed-panel-headbar-right i {
+  font-size: 20px;
+}
+
+.feed-panel-head-bar-tools {
+  /*text-align: right;*/
+}
+
+.feed-panel-text {
+  font-family: 'Roboto';
+  text-align: left;
+  font-size: 15px;
+}
+
+.feed-panel-foot {
+  display: block;
+  padding: 10px 0px;
+  height: 55px;
+}
+
+.feed-panel-foot i {
+  font-size: 20px;
+}
+
+.feed-panel-foot p {
+  font-size: 15px;
+}
+
+.feed-panel-footer-bar {
+  display: inline;
+  padding: 10px 0px;
+  height: 40px;
+  width: 100%;
+}
+
+.feed-panel-footbar-left {
+  display: inline-flex;
+  float: left;
+}
+
+.feed-panel-pubdate {
+  padding-top: initial;
+  font-weight: 400;
+  font-size: 12px;
+  text-align: left;
+  margin-bottom: 0px;
+}
+
+.feed-panel-pubdate .feed-panel-grey {
+  margin-bottom: 0px;
+}
+
+.feed-panel-footbar-right {
+  display: inline-flex;
+  float: right;
+  height: 50px;
+}
+
+.footer-views-count-box {
+  display: inline-flex;
+  height: 50px;
+  margin-right: 17px;
+}
+
+.footer-likes-count-box {
+  display: inline-flex;
+  height: 50px;
+}
+
+.feed-stats-icons i {
+  font-size: 20px;
+  margin-top: 7px;
+}
+
+.feed-stats-icons {
+}
+
+.feed-panel-footbar-count {
+  padding-top: 7px;
+  font-weight: 500;
+  margin-right: 3px;
+}
+
+.account-bio-panel {
+  height: fit-content;
+}
+
+.col-6.posts_column_name {
+}
+
+.jobs_panel_content {
+  margin-top: 40px;
+}
+
+.feed-jobs-column {
+  padding: 10px;
+  text-align: center;
+  background-color: rgb(255,250,236);
+  height: fit-content;
+}
+
+.industry-links::-webkit-scrollbar {
+  display: none;
+}
+

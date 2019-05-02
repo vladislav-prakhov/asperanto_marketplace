@@ -1,0 +1,289 @@
+header {
+  background-color: #ffffff;
+  font-family: 'Roboto';
+}
+
+.main-header {
+  background-color: #ffffff;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+@media (min-width: 768px) {
+  .navbar-header {
+    height: 42px;
+    padding: 10px 10px 0px 10px;
+  }
+}
+
+.navbar-header {
+  height: 50px;
+  /*padding: 0px 10px;*/
+}
+
+@media (max-width: 575px) {
+  .navbar-header {
+    height: 50px;
+    padding: 0px 10px;
+  }
+}
+
+.mobile-parent {
+  /*text-align: center;*/
+}
+
+.mobile-left {
+  padding: 0px;
+  margin: auto auto auto 0;
+}
+
+.fa.fa-bars.navbar-icon {
+  margin-top: 3px;
+}
+
+.navbar-icon {
+  font-size: x-large;
+}
+
+.button-navbar {
+  color: #555;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  display: inline;
+  font-size: 15px;
+}
+
+.button-navbar {
+  color: #555 !important;
+  text-align: center;
+  position: relative;
+  font-size: xx-large;
+}
+
+.mobile-center {
+  padding: 10px 10px 0px 10px;
+  margin: auto;
+}
+
+.mobile-right {
+  margin: auto 0 auto auto;
+  padding: 0px;
+}
+
+.navbar-header-logo {
+  padding-right: 30px;
+}
+
+@media (min-width: 768px) {
+  .navbar-header-logo {
+    float: left;
+    width: 35%;
+    display: flex;
+  }
+}
+
+@media (min-width: 992px) {
+  .navbar-header-logo {
+    float: left;
+    width: 25%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .navbar-header-logo {
+    float: left;
+    width: 21%;
+  }
+}
+
+
+.logo-heading .h5, h5 {
+}
+
+.logo-link-header {
+  color: #444;
+  margin-right: 30px;
+}
+
+.logo-link-header:hover {
+  color: #444;
+}
+
+@media (min-width: 768px) {
+  .navbar-header-search {
+    float: left;
+    width: 65%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .navbar-header-search {
+    width: 60%;
+  }
+}
+
+.search-container {
+  display: flex;
+  height: 25px;
+  font-size: 12px;
+}
+
+.search-input {
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-right: none;
+  width: 100%;
+}
+
+.btn.btn-light.search-btn {
+  border-radius: 0 10px 10px 0;
+  background: rgb(165,228,165);
+  border: 1px solid rgb(165,228,165);
+}
+
+.btn.btn-light.advanced-search-btn {
+  border-radius: 10px 0 0 10px;
+  background: rgb(237, 147, 71);
+  border: 1px solid rgb(237, 147, 71);
+}
+
+.btn.btn-light.advanced-search-btn {
+  margin: 0px;
+  padding: 0px 10px 10px 15px;
+}
+
+.btn.btn-light.search-btn {
+  margin: 0px;
+  padding: 0px 15px 10px 15px;
+}
+
+.navbar-header-acc {
+  float: right;
+  /*width: 30%;*/
+}
+
+.navbar-header-account {
+  height: 20px;
+  background: rgb(158,215,233);
+  width: 20px;
+  border-radius: 100%;
+  margin-left: 20px;
+  margin-top: 2px;
+}
+
+.navbar-header-menu-link.menu-link {
+  margin-left: 20px;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+
+.navbar-header-menu-link {
+  float: right;
+}
+
+.menu-link-box {
+  display: flex;
+  color: #555;
+}
+
+.menu-link-box > p {
+  margin: 0px 5px;
+}
+
+.menu-link-box > i {
+  font-size: 22px;
+  margin: 3px 5px 0px 5px;
+}
+
+.industry-links {
+  white-space: nowrap;
+  overflow-x: visible;
+  display: flex;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+.industry-links::-webkit-scrollbar {
+  display: none;
+}
+.industry-links {
+  -ms-overflow-style: none;
+}
+
+@media (min-width: 992px) {
+  .industry-links {
+    height: 30px;
+  }
+}
+
+@media (max-width: 991px) {
+  .navbar-links-text {
+    display: none!important;
+  }
+}
+
+.button-navbar.navbar-link {
+  margin: 0px 10px;
+}
+
+.button-navbar.navbar-link {
+  font-size: 12px;
+}
+
+.offcanvas-mobile-left-sidebar {
+  width: 270px;
+  height: 100vh;
+  background: rgb(255,255,255);
+}
+
+.offcanvas-mobile-left-sidebar-header {
+  width: 100%;
+  height: 50px;
+  background: #414141;
+  padding: 5px;
+  display: flex;
+}
+
+.offcanvas-mobile-left-sidebar-header-acc-icon {
+  height: 30px;
+  margin: 5px 10px 5px 10px;
+  background: rgb(0,209,255);
+  border-radius: 100%;
+  width: 30px;
+}
+
+.offcanvas-mobile-left-sidebar-header-acc-name {
+  padding: 9px;
+  font-size: 15px;
+  color: #fff;
+}
+
+.offcanvas-mobile-left-sidebar-links-box {
+  width: 100%;
+  padding: 10px;
+}
+
+.offcanvas-mobile-left-sidebar-link {
+  height: 35px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding: 5px;
+  display: flex;
+}
+
+.offcanvas-mobile-left-sidebar-link > i {
+  width: 30px;
+  font-size: x-large;
+  color: #414141;
+}
+
+.offcanvas-mobile-left-sidebar-link > span {
+  color: #414141;
+  font-size: 15px;
+  margin-left: 10px;
+}
+

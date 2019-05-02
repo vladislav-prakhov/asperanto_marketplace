@@ -7,3 +7,7 @@
     display: flex;
     justify-content: center;
 }
+
+.main-home > a > h1 {
+    font-size: 25px;
+}

@@ -1,0 +1,63 @@
+.categories-heading {
+  width: 100%;
+  background-position: center;
+  height: 550px;
+  background-size: cover;
+}
+
+.categories-image-aviation {
+  background-image: url("https://i.ibb.co/h2Bfvjn/Aviation.jpg");
+}
+
+.categories-image-oil-gas {
+  background-image: url("https://i.ibb.co/whBSHWw/oil-gas.jpg");
+}
+
+.categories-image-agriculture {
+  background-image: url("https://i.ibb.co/CM5HgmT/wheat-field2.jpg");
+}
+
+.categories-image-space-industry {
+  background-image: url("https://i.ibb.co/mq7CHQQ/vostochniy.jpg");
+}
+
+.categories-image-mining {
+  background-image: url("https://i.ibb.co/QCV8wRj/mining.jpg");
+}
+
+.categories-image-metallurgy {
+  background-image: url("https://i.ibb.co/B6bSgSd/metallurgy.png");
+}
+
+.categories-heading-shadowing {
+  background: rgba(0,0,0,0.4);
+  height: 100%;
+}
+
+.category-heading-box {
+  width: 100%;
+  margin: 0px;
+}
+
+.category-heading-name {
+  font-size: 36px;
+  color: white;
+  margin-top: 50px;
+}
+
+@media (max-width: 576px) {
+  .category-heading-name {
+    font-size: 28px;
+  }
+}
+
+
+  .category-links {
+  margin-top: 200px;
+}
+
+.category-one-link {
+  font-size: 24px;
+  color: #fff;
+}
+

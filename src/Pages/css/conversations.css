@@ -1,0 +1,246 @@
+.conversation-heading {
+  width: 100%;
+  background: rgba(0,0,0,0.06);
+}
+
+@media (min-width: 992px) {
+  .conversation-header-breadcrumbs-box {
+    width: 100%;
+    vertical-align: middle;
+    position: relative;
+    padding: 5px 0px 0px 0px;
+    display: flex;
+    flex-wrap: wrap;
+    color: black;
+  }
+}
+
+@media (max-width: 991px) {
+  .conversation-header-breadcrumbs-box {
+    width: 100%;
+    vertical-align: middle;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    color: black;
+    line-height: 19px;
+    margin-top: 5px;
+    /*font-size: large;*/
+  }
+}
+
+@media (max-width: 991px) {
+  .conversation-header-breadcrumbs-box-item > a {
+    color: rgb(13,13,77);
+    font-size: 14px;
+    line-height: 10px;
+  }
+}
+
+@media (min-width: 992px) {
+  .conversation-header-breadcrumbs-box-item > a {
+    color: rgb(13,13,77);
+    font-size: 14px;
+  }
+}
+
+.conversation-header-breadcrumbs-box-item > a:hover {
+  color: rgb(0,0,255);
+}
+
+.conversation-header-breadcrumbs-box-item {
+  width: auto;
+  margin-right: 10px;
+}
+
+@media (min-width: 992px) {
+  .conversations-header-org-block {
+    margin: 10px 0px;
+    display: flex;
+  }
+}
+
+@media (max-width: 991px) {
+  .conversations-header-org-block {
+    margin: 4px 0px;
+    display: flex;
+  }
+}
+
+@media (min-width: 992px) {
+  .conversations-header-org-block-info {
+    width: calc(100% - 60px);
+  }
+}
+
+@media (max-width: 991px) {
+  .conversations-header-org-block-info {
+    width: calc(100% - 50px);
+    display: grid;
+  }
+}
+
+@media (min-width: 992px) {
+  .conversations-header-org-block-info > span {
+    margin: 0px 0px 0px 10px;
+    display: flex;
+  }
+}
+
+@media (max-width: 991px) {
+  .conversations-header-org-block-info > span {
+    margin: auto 10px;
+    vertical-align: middle;
+    font-size: 11px;
+    word-wrap: break-word;
+  }
+}
+
+@media (max-width: 991px) {
+  .conversations-header-org-block-pic {
+    width: 50px;
+    height: 50px;
+    padding: 5px;
+    background: rgb(255,255,255);
+    position: relative;
+  }
+}
+
+@media (min-width: 992px) {
+  .conversations-header-org-block-pic {
+    width: 60px;
+    height: 60px;
+    padding: 5px;
+    background: rgb(255,255,255);
+    position: relative;
+  }
+}
+
+@media (min-width: 992px) {
+  .conversations-header-org-block-pic > img {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: auto;
+    max-width: 55px;
+    max-height: 55px;
+    height: auto;
+  }
+}
+
+@media (max-width: 991px) {
+  .conversations-header-org-block-pic > img {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: auto;
+    max-width: 45px;
+    max-height: 45px;
+    height: auto;
+  }
+}
+
+.conversation-box {
+  margin: 10px 0px;
+  display: block;
+}
+
+.conversation-message-box-block {
+  width: 100%;
+  float: left;
+}
+
+.conversation-message-box {
+  max-width: 80%;
+  width: fit-content;
+  background: white;
+  margin: 10px 0px;
+  display: flex;
+  border-radius: 15px;
+}
+
+.conversation-message-box.your-message {
+  float: right;
+}
+
+.conversation-message-box-content {
+  width: 100%;
+  display: inline-flex;
+  padding: 5px 15px;
+}
+
+.conversation-message-box-content > p {
+  width: 100%;
+  margin-bottom: 0;
+  font-size: 12px;
+  color: black;
+  word-wrap: break-word;
+}
+
+.conversation-messages-col {
+    padding: 0px;
+    height: calc(100vh - 250px);
+    overflow-y: scroll;
+  }
+
+@media (max-width: 575px) {
+  .conversation-messages-input-col {
+    padding: 0px;
+  }
+}
+
+
+.conversation-message-input-block {
+  height: 40px;
+  background: white;
+}
+
+.message-input-form {
+  display: flex;
+  height: 100%;
+}
+
+.form-group.add-to-message-button {
+  width: 50px;
+  height: 100%;
+}
+
+.form-group.message-text-input-form {
+  width: calc(100% - 100px);
+  height: 100%;
+}
+
+.form-control.message-text-input-textarea {
+  height: 40px;
+  resize: none;
+  font-size: 12px;
+  overflow: hidden;
+  border-radius: 0px;
+  border: 1px solid #ccc;
+}
+
+.form-control:focus {
+  box-shadow: none;
+}
+
+.btn.btn-primary.send-message-button {
+  width: 50px;
+  height: 100%;
+}
+
+.send-message-button-form > i {
+  width: 50px;
+  height: 40px;
+  font-size: 20px;
+  text-align: center;
+  padding: 10px;
+  background: #fff;
+  color: #555;
+}
+

@@ -1,11 +1,10 @@
 footer {
   grid-area: footer;
   font-family: 'Roboto';
-  background-color: #fff;
+  background-color: #333;
   border-top: 1px solid #c5c5c5;
   display: block;
   height: 130px;
-  color: #555;
 }
 
 .footer-own-logo-box {
@@ -14,6 +13,7 @@ footer {
 }
 
 .footer-logo {
+  color: white;
   font-size: 18px;
   padding: 5px;
   height: inherit;
@@ -21,7 +21,7 @@ footer {
 }
 
 .footer-partners-box {
-  /*display: block;*/
+  display: block;
   font-size: 14px;
   font-weight: 400;
 }
@@ -33,26 +33,30 @@ footer {
 }
 
 .footer-partners-heading {
+  color: #fff;
   font-family: 'Roboto';
   font-size: 17px;
   height: 20px;
 }
 
 .footer-partners-logos-box {
-  /*width: 100vw;*/
-  display: flex;
   justify-content: center;
+  display: inline-flex;
+  height: 55px;
   text-align: center;
+  justify-content: center;
+  width: 100%;
 }
 
 .footer-partners-logos {
-  width: 270px;
-  margin: 0px 10px;
+  width: inherit;
+  justify-content: center;
+  display: inline-block;
+  width: 275px;
 }
 
 .footer-partners-logos > a > img {
-  height: 50px;
-  width: auto;
+  height: 100%;
   margin: 0px 10px;
 }
 

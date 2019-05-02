@@ -52,12 +52,19 @@ module.exports = {
                 test: /\.css$/,
                 use: [MiniCssExtractPlugin.loader, 'css-loader']
             },
+            {
+                test: /\.(png|jpg|gif)$/,
+                loader: 'file-loader',
+                options: {
+                    name: '/./[path][name].[ext]',
+                },
+            },
         ]
     },
     resolve: { extensions: ["*", ".js", ".jsx"] },
     output: {
         path: path.resolve(__dirname, "dist"),
-        publicPath: "",
+        publicPath: "/./",
         filename: "bundle.js"
     },
     plugins: [
@@ -70,5 +77,6 @@ module.exports = {
             filename: "bundle.css",
             chunkFilename: "id.css"
         }),
-    ]
+    ],
+
 };
