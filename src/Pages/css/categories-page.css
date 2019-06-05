@@ -1,0 +1,80 @@
+.category-box-background {
+    background-position: center;
+    background-size: cover;
+}
+.col1 {
+    background-image: url("https://ecolog-international.com/wp-content/uploads/2015/05/oil-and-gas1-1.jpg");
+
+}
+.col2 {
+    background-image: url("https://www.ivepe.gr/images/seminars/108_01.jpg");
+}
+.col3 {
+    background-image: url("https://cdn1.img.sputniknews.com/images/104469/17/1044691747.jpg");
+}
+.col4 {
+    background-image: url("http://southeastagnet.com/wp-content/uploads/2017/04/Harvesting-of-wheat.-Russia.jpg");
+}
+.col5 {
+    background-image: url("http://www.khrunichev.ru/img/site/ustanovka_rn_angara-a5_na_sk1s.jpg");
+}
+.col6 {
+    background-image: url("http://efsol.ru/upload/medialibrary/de8/coal.png");
+}
+.category-header {
+    padding:10px;
+}
+.category-header-text {
+    font-size: 25px;
+    text-align: center;
+}
+.category-col {
+    /*display: inline;*/
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.category-box {
+    border-radius: 10px;
+    margin: 10px;
+    height: 90px;
+}
+.category-box-shadowing {
+    background: rgba(0,0,0,0.3);
+    height: 100%;
+    border-radius: 10px;
+}
+@media (min-width: 576px) {
+    .category-box {
+        display: inline-flex;
+        width: 400px;
+    }
+}
+
+
+.category-subbox {
+    color: #fff;
+    padding: 5px;
+    text-align: center;
+    width:100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.category-subbox > h2 {
+    font-size: 1rem;
+    text-align: center;
+    margin: 20px 0px 0px 0px;
+    word-wrap: break-word;
+}
+
+@media (min-width: 992px) {
+    .category-subbox > h2 {
+        font-size: 1.1rem;
+    }
+}
+
+
+.category-box:hover {
+     color: initial;
+}

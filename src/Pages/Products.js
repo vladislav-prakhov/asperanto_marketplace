@@ -11,7 +11,8 @@ export class Products extends Component {
 
         this.state = {
             products: [],
-            errors: {}
+            errors: {},
+            search_query: '',
         };
     }
 
@@ -37,7 +38,29 @@ export class Products extends Component {
         }
     }
 
+    // componentWillReceiveProps(){
+    //     if (this.props.searchFieldValue) {
+    //         this.setState({search_query: this.props.searchFieldValue});
+    //         const query = {
+    //             text: this.props.searchFieldValue,
+    //         };
+    //     }
+    // }
 
+    componentDidUpdate(prevProps) {
+        if ((this.props.searchFieldValue) &&
+            (this.props.searchFieldValue !== prevProps.searchFieldValue)) {
+            const query = {
+                text: this.props.searchFieldValue,
+            };
+            axios.post(`http://api.asperanto.com/api/products/search`, query)
+                .then(res => {
+                    const products = res.data;
+                    this.setState({ products });
+                    console.log(products);
+                })
+        }
+    }
 
     render() {
         let shrink = 'products';
@@ -282,7 +305,7 @@ export class Products extends Component {
                                             <span>от:&nbsp;</span>
                                         </div>
                                         <div className="pricebox-float-right">
-                                            <input type="text"/>
+                                            <input type="number"/>
                                         </div>
                                     </div>
                                     <div className="product-right-sidebar-pricebox-to">
@@ -290,7 +313,7 @@ export class Products extends Component {
                                             <span>до:&nbsp;</span>
                                         </div>
                                         <div className="pricebox-float-right">
-                                            <input type="text"/>
+                                            <input type="number"/>
                                         </div>
                                     </div>
                                 </div>

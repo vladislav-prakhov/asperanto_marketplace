@@ -4,6 +4,7 @@ import {Link, Route} from 'react-router-dom';
 import axios from "axios";
 import {Organization} from "../Pages/Organization";
 import { browserHistory } from 'react-router';
+import queryString from "querystring";
 
 export class Header extends Component {
     constructor (props) {
@@ -27,24 +28,18 @@ export class Header extends Component {
     searchFieldOnSubmit(e) {
         e.preventDefault();
         const query = this.state.search_field;
-        window.location.replace("/products?search="+query);
+        this.props.history.push(`/products?search=${query}`);
+        this.props.getSearchFieldToApp(query);
+        // window.location.replace("/products?search="+query);
     }
 
     componentDidMount() {
-
-        const authToken = localStorage.getItem('auth_token');
-
-        if (authToken) {
-            axios.get(`http://api.asperanto.com/api/accounts/profile`, {headers: { Authorization: authToken}})
-                .then(res => {
-                    const user = res.data.user;
-                    this.setState({ user });
-                    console.log(user);
-                    const organization = res.data.organization;
-                    this.setState({organization});
-                });
+        if (this.props.location.search) {
+            const values = queryString.parse(this.props.location.search.slice(1));
+            console.log(values.search);
+            const search_field = values.search;
+            this.setState( {search_field});
         }
-
 
     }
 
@@ -61,12 +56,13 @@ export class Header extends Component {
     }
 
     render () {
-        const currentUser = this.state.user;
+        const currentUser = this.props.user;
         let currentOrgLink = '/organization/';
-        if (this.state.organization) {
-            let orgUrl = this.state.organization.comId.urlName;
+        let currentOrganization;
+        if (this.props.organization && Object.values(this.props.organization).length >= 1) {
+            currentOrganization = this.props.organization;
+            let orgUrl = currentOrganization.comId.urlName;
             currentOrgLink = '/organization/' + orgUrl;
-            console.log(currentOrgLink);
         }
         return (
             <header>
@@ -89,6 +85,16 @@ export class Header extends Component {
                                             </Link>
                                         </div>
                                     </div>
+                                    {/*<div className="mobile-center">*/}
+                                        {/*<div>*/}
+                                            {/*<input type="text"*/}
+                                                   {/*name="search_field"*/}
+                                                   {/*placeholder="поиск..."*/}
+                                                   {/*value={this.state.search_field}*/}
+                                                   {/*onChange={this.searchFieldOnChange}*/}
+                                                   {/*className="search-input"/>*/}
+                                        {/*</div>*/}
+                                    {/*</div>*/}
                                     <div className="mobile-right"><a href="#" className="button-navbar">
                                         <i className="fa fa-search navbar-icon"/></a>
                                     </div>
@@ -189,33 +195,33 @@ export class Header extends Component {
                             </div>
                         )}
                         <div className="offcanvas-mobile-left-sidebar-links-box">
-                            <a href="#">
+                            <Link to="/categories">
                                 <div className="offcanvas-mobile-left-sidebar-link">
                                     <i className="fa fa-th"/><span>Категории</span>
                                 </div>
-                            </a>
-                            {this.state.organization &&
+                            </Link>
+                            {currentOrganization &&
                             <Link to={currentOrgLink}>
                                 <div className="offcanvas-mobile-left-sidebar-link">
                                     <i className="fa fa-building"/><span>Организация</span>
                                 </div>
                             </Link>
                             }
-                            {this.state.user._id &&
+                            {currentUser._id &&
                                 <Link to={'/projects'}>
                                     <div className="offcanvas-mobile-left-sidebar-link">
                                         <i className="fa fa-briefcase"/><span>Проекты</span>
                                     </div>
                                 </Link>
                             }
-                            {this.state.user._id &&
+                            {currentUser._id &&
                             <a href="#">
                                 <div className="offcanvas-mobile-left-sidebar-link">
                                     <i className="fa fa-user"/><span>Контакты</span>
                                 </div>
                             </a>
                             }
-                            {this.state.user._id &&
+                            {currentUser._id &&
                             <a href="#">
                                 <div className="offcanvas-mobile-left-sidebar-link">
                                     <i className="fa fa-chart-pie"/><span>Мониторинг</span>

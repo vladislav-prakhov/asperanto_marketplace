@@ -4,15 +4,6 @@ import "./css/general.css";
 // import "./css/styles.css";
 import axios from "axios";
 import {Link, Route, Switch} from "react-router-dom";
-import {Home} from "./Home";
-import {Category} from "./Category";
-import {Suggestions} from "./Suggestions";
-import {Authentication} from "./Auth";
-import {Registration} from "./Register";
-import {Products} from "./Products";
-import {Projects} from "./Projects";
-import {Subproject} from "./Subproject";
-import {ProductOrService} from "./ProductOrService";
 
 export class Organization extends Component {
     constructor (props) {
@@ -62,7 +53,7 @@ export class Organization extends Component {
         let service;
 
         const orgTags = org.tags;
-        let tags
+        let tags;
         if (orgTags) {
             tags = orgTags.map((tag) =>
                 <a href="#">#{tag}</a>

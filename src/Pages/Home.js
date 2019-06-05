@@ -41,8 +41,7 @@ export class Home extends Component {
     render () {
         return (
             <div className="main-home">
-                <p>{this.state.profile}</p>
-                <Link to={'/categories'}><h1>Категории</h1></Link>
+                {/*<Link to={'/categories'}><h1>Категории</h1></Link>*/}
                 {/*<Link to={'/organization'}><h1>Организация</h1></Link>*/}
                 {/*<Link to={'/auth'}><h1>Аутентификация</h1></Link>*/}
                 {/*<Link to={'/register'}><h1>Регистрация</h1></Link>*/}

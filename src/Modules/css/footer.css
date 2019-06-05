@@ -2,7 +2,6 @@ footer {
   grid-area: footer;
   font-family: 'Roboto';
   background-color: #fff;
-  border-top: 1px solid #c5c5c5;
   display: block;
   height: 130px;
   color: #555;

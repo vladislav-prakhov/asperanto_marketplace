@@ -12,7 +12,15 @@ export class ProductOrService extends Component {
         this.state = {
             product: {
             },
-        }
+            selectedSubproject: ''
+        };
+        this.handleRadio = this.handleRadio.bind(this);
+        this.onSubmit = this.onSubmit.bind(this);
+    }
+
+    handleRadio(id) {
+        this.setState({ selectedSubproject: id});
+        console.log(id);
     }
 
     componentDidMount() {
@@ -46,6 +54,62 @@ export class ProductOrService extends Component {
 
 
         }
+
+        //тут очень криво реализовано. Наверное действительно нужен общий storage проекта
+        const authToken = localStorage.getItem('auth_token');
+        if (authToken) {
+            axios.get(`http://api.asperanto.com/api/accounts/profile`, {headers: { Authorization: authToken}})
+                .then(res => {
+                    const organizationUrlName = res.data.organization.comId.urlName;
+                    let query = (`http://api.asperanto.com/api/organizations/` + organizationUrlName + `/private`);
+                    axios.get( query, {headers: { Authorization: authToken}})
+                        .then(res => {
+                            const organization = res.data;
+                            this.setState({organization});
+                            const orgProjects = organization.projects;
+                            this.setState({orgProjects});
+                            console.log(this.state.orgProjects);
+                        })
+
+                });
+        }
+
+
+    }
+
+    onSubmit(e) {
+        e.preventDefault();
+
+        let path = this.props.match.path;
+        let query_type;
+        if (path === '/products/:productId') {
+            query_type = 'products';
+        } else if (path === '/services/:serviceId') {
+            query_type = 'services';
+        }
+        const query = 'http://api.asperanto.com/api/' + query_type + '/' + this.state.product._id +'/create_request';
+        console.log("Типо подали заявку  " + this.state.selectedSubproject);
+
+        const newRequest = {
+            // organization: this.state.organization,
+            unitCount: '0',
+            subprojectId: this.state.selectedSubproject,
+        };
+
+        const authToken = localStorage.getItem('auth_token');
+        if (authToken) {
+            axios.post(query , newRequest,
+                {headers: { Authorization: authToken}})
+                .then(res => {
+                    console.log(res.data);
+                    console.log(newRequest);
+                    $('#CreateProductRequest').modal('hide');
+                })
+                .catch(err => {
+                    this.setState({request_errors: err.response.data });
+                });
+        }
+
     }
 
     render () {
@@ -136,76 +200,55 @@ export class ProductOrService extends Component {
                                     </div>
                                     <div id="CreateProductRequest" className="modal fade" role="dialog">
                                         <div className="modal-dialog modal-dialog-centered" role="document">
-                                            <div className="modal-content modal-content-product">
-                                                <div className="modal-content-heading">
-                                                    <span>{product.name}</span>
-                                                    <span className="modal-company-name">
-                                                            <strong>{product.organization.name}</strong>
-                                                            <br/>
-                                                        </span>
-                                                </div>
-                                                <div className="modal-content-message">
-                                                    <div className="modal-general-category-heading">
-                                                        <span>Выберете проект и подпроект:</span>
+                                            <form onSubmit={this.onSubmit}>
+                                                <div className="modal-content modal-content-product">
+                                                    <div className="modal-content-heading">
+                                                        <span>{product.name}</span>
+                                                        <span className="modal-company-name">
+                                                                <strong>{product.organization.name}</strong>
+                                                                <br/>
+                                                            </span>
                                                     </div>
-                                                    <div className="modal-categories-box">
-                                                        <div className="modal-category-box">
-                                                            <div className="modal-category-heading"><span>Общее</span>
-                                                            </div>
-                                                            <div className="modal-subcategory-box">
-                                                                <label className="labl">
-                                                                    <input type="radio" name="subproject"
-                                                                           id="subproject-check-1"/>
-                                                                    <div>Разработчики</div>
-                                                                </label>
-                                                                <label className="labl">
-                                                                    <input type="radio" name="subproject"
-                                                                           id="subproject-check-2"/>
-                                                                    <div>Поставщики продуктов</div>
-                                                                </label>
-                                                                <label className="labl">
-                                                                    <input type="radio" name="subproject"
-                                                                           id="subproject-check-3"/>
-                                                                    <div>Поставщики сервисных услуг</div>
-                                                                </label>
-                                                            </div>
+                                                    <div className="modal-content-message">
+                                                        <div className="modal-general-category-heading">
+                                                            <span>Выберете проект и подпроект:</span>
                                                         </div>
-                                                        <div className="modal-category-box">
-                                                            <div className="modal-category-heading"><span>Закупки для ракеты NK-205</span>
-                                                            </div>
-                                                            <div className="modal-subcategory-box">
-                                                                <label className="labl">
-                                                                    <input type="radio" name="subproject"
-                                                                           id="subproject-check-4"/>
-                                                                    <div>Двигатели</div>
-                                                                </label>
-                                                                <label className="labl">
-                                                                    <input type="radio" name="subproject"
-                                                                           id="subproject-check-5"/>
-                                                                    <div>Ракетное топливо</div>
-                                                                </label>
-                                                                <label className="labl">
-                                                                    <input type="radio" name="subproject"
-                                                                           id="subproject-check-6"/>
-                                                                    <div>Сервис</div>
-                                                                </label>
-                                                            </div>
+                                                        <div className="modal-categories-box">
+                                                            { this.state.orgProjects &&
+                                                                this.state.orgProjects.map(
+                                                                    (project, project_index) => (
+                                                                        ( Object.keys(project.subprojects).length > 0) &&
+                                                            <div className="modal-category-box" key={project_index}>
+                                                                <div className="modal-category-heading">
+                                                                    <span>{project.name}</span>
+                                                                </div>
+                                                                <div className="modal-subcategory-box">
+                                                                    {project.subprojects.map((subproject, subproject_index) => (
+                                                                    <label className="labl">
+                                                                        <input type="radio" name="subproject"
+                                                                               id={subproject_index}
+                                                                               key={subproject._id}
+                                                                                onChange={e => this.handleRadio(subproject._id)}/>
+                                                                        <div>{subproject.name}</div>
+                                                                    </label>))}
+                                                                </div>
+                                                            </div>))}
                                                         </div>
                                                     </div>
+                                                    <div className="modal-content-message">
+                                                        <span>Написать сообщение:</span>
+                                                        <textarea/>
+                                                    </div>
+                                                    <div className="modal-content-footer">
+                                                        <button className="btn btn-primary" type="button"
+                                                                data-dismiss="modal">Закрыть окно
+                                                        </button>
+                                                        <button className="btn btn-primary btn-success create-request"
+                                                                type="submit">Отправить заявку
+                                                        </button>
+                                                    </div>
                                                 </div>
-                                                <div className="modal-content-message">
-                                                    <span>Написать сообщение:</span>
-                                                    <textarea/>
-                                                </div>
-                                                <div className="modal-content-footer">
-                                                    <button className="btn btn-primary" type="button"
-                                                            data-dismiss="modal">Закрыть окно
-                                                    </button>
-                                                    <button className="btn btn-primary btn-success create-request"
-                                                            type="button">Отправить заявку
-                                                    </button>
-                                                </div>
-                                            </div>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>

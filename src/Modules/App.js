@@ -1,9 +1,10 @@
 import React, { Component} from "react";
-import { Navbar } from './Navbar.js';
+import { withRouter } from "react-router";
 import { Footer } from './Footer.js';
 import { Main } from './Main.js';
-import { Sidebar } from './Sidebar';
-import {Header} from "./Header";
+import { Header } from "./Header";
+import queryString from "querystring";
+import axios from "axios";
 
 
 class App extends Component{
@@ -11,116 +12,52 @@ class App extends Component{
         super(props);
 
         this.state = {
-            sidebar: false,
-            searchBox: {
-                activated: false,
-                value: '',
-                additionalInfo: {
-                    typeOfSearch: 'goods',
-                },
-            },
+            user: {},
+            organization: {},
+            search_field_value: '',
         };
 
-        this.sidebarChangeState = this.sidebarChangeState.bind(this);
-        this.searchBoxPopUp = this.searchBoxPopUp.bind(this);
-        this.closeModalWindows = this.closeModalWindows.bind(this);
-        this.getSearchBoxAdditionalInfo = this.getSearchBoxAdditionalInfo.bind(this);
-        this.getSearchBoxQuery = this.getSearchBoxQuery.bind(this);
+        this.getSearchFieldToApp = this.getSearchFieldToApp.bind(this);
+    };
+
+
+    getSearchFieldToApp(fieldValue) {
+        this.setState({search_field_value: fieldValue});
+    };
+
+
+
+    componentDidMount() {
+        const authToken = localStorage.getItem('auth_token');
+
+        if (authToken) {
+            axios.get(`http://api.asperanto.com/api/accounts/profile`, {headers: { Authorization: authToken}})
+                .then(res => {
+                    const user = res.data.user;
+                    this.setState({ user });
+                    console.log(user);
+                    const organization = res.data.organization;
+                    this.setState({organization});
+                });
+        }
+
+
     }
 
-    sidebarChangeState() {
-        this.setState(
-            {sidebar: !this.state.sidebar},
-        );
-    }
-
-    searchBoxPopUp(e) {
-        if (!this.state.searchBox.activated)
-            this.setState(
-                {
-                    searchBox: {
-                        activated: !this.state.searchBox.activated,
-                        value: this.state.searchBox.value,
-                        additionalInfo: this.state.searchBox.additionalInfo,
-                    }},
-            );
-
-        e.stopPropagation();
-    }
-
-    closeModalWindows() {
-        if (this.state.searchBox.activated)
-            this.setState(
-                {
-                    searchBox: {
-                        activated: !this.state.searchBox.activated,
-                        value: this.state.searchBox.value,
-                        additionalInfo: this.state.searchBox.additionalInfo,
-                    }},
-            );
-
-        if (this.state.sidebar)
-            this.setState(
-                {
-                    sidebar: !this.state.sidebar,
-                }
-            )
-    }
-
-    getSearchBoxAdditionalInfo(e) {
-        this.setState(
-            {
-                searchBox: {
-                    activated: this.state.searchBox.activated,
-                    value: this.state.searchBox.value,
-                    additionalInfo: {
-                        typeOfSearch: e.target.value,
-                    },
-                }},
-        );
-
-        e.stopPropagation();
-    }
-
-    getSearchBoxQuery(e) {
-        this.setState(
-            {
-                searchBox: {
-                    activated: this.state.searchBox.activated,
-                    value: e.target.value,
-                    additionalInfo: this.state.searchBox.additionalInfo,
-                }
-            }
-        );
-    }
 
     render(){
-        let sidebar;
-
-        if (this.state.sidebar)
-            sidebar = <Sidebar sidebarUntoggle={this.sidebarChangeState}/>;
-        else
-            sidebar = null;
+        const HeaderWithRouter = withRouter(Header);
         $('#MobileHeaderModal').modal('hide');
         return (
             <div className="full-page">
-                <div className={"wrapper"}>
-                {sidebar}
-
-                    <div className="wrapper-page" onClick={ this.closeModalWindows }>
-                        {/*<Navbar sidebarToggle={ this.sidebarChangeState } searchBoxToggle={ this.searchBoxPopUp } searchBoxQuery={ this.getSearchBoxQuery }/>*/}
-                        <Header/>
-                        <Main state={ this.state } getAddInfo={this.getSearchBoxAdditionalInfo}/>
-                        <Footer/>
-                    </div>
-                </div>
+                <HeaderWithRouter user={this.state.user} organization={this.state.organization}
+                                  getSearchFieldToApp={this.getSearchFieldToApp}/>
+                {/*<Main state={ this.state } getAddInfo={this.getSearchBoxAdditionalInfo}/>*/}
+                <Main user={this.state.user} organization={this.state.organization} searchFieldValue={this.state.search_field_value}/>
+                <Footer/>
             </div>
         );
     }
-}
-
-if(typeof(module.hot) !== 'undefined') {
-    module.hot.accept() // eslint-disable-line no-undef
 }
 
 export default App;

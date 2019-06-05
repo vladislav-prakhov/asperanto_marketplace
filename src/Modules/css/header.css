@@ -137,18 +137,19 @@ header {
   padding: 10px;
   border-right: none;
   width: 100%;
+  font-size: 0.9rem;
 }
 
 .btn.btn-light.search-btn {
   border-radius: 0 10px 10px 0;
-  background: rgb(165,228,165);
-  border: 1px solid rgb(165,228,165);
+  background: rgb(177,237,127);
+  border: 1px solid rgb(177,237,127);
 }
 
 .btn.btn-light.advanced-search-btn {
   border-radius: 10px 0 0 10px;
-  background: rgb(237, 147, 71);
-  border: 1px solid rgb(237, 147, 71);
+  background: rgb(244,195,76);
+  border: 1px solid rgb(244,195,76);
 }
 
 .btn.btn-light.advanced-search-btn {
@@ -166,6 +167,9 @@ header {
   /*width: 30%;*/
 }
 
+.search-btn-icon {
+  color: #555;
+}
 .navbar-header-account {
   height: 20px;
   background: rgb(158,215,233);

@@ -18,7 +18,8 @@
 }
 
 .auth-blocks {
-  height: 100%;
+  /*height: 100%;*/
+  height: calc(100vh - 50px - 130px);
 }
 
 @media (max-width: 575px) {
@@ -32,6 +33,8 @@
 @media (min-width: 576px) {
   .auth-blocks {
     padding: 10px 5px;
+    margin-right: 0px;
+    margin-left: 0px;
   }
 }
 
@@ -103,11 +106,20 @@
 }
 
 .btn-auth-login:hover {
-  width: calc(100% - 20px);
-  justify-content: center;
-  margin: 10px;
+  /*width: calc(100% - 20px);*/
+  /*justify-content: center;*/
+  /*margin: 10px;*/
   background: rgb(129,208,156);
   border: rgb(129,208,156);
+  /*max-width: 500px;*/
+}
+
+.btn-auth-login:active {
+  /*width: calc(100% - 20px);*/
+  /*justify-content: center;*/
+  /*margin: 10px;*/
+  background: rgb(129,208,156) !important;
+  border: rgb(129,208,156) !important;
   /*max-width: 500px;*/
 }
 

@@ -63,7 +63,7 @@
   .product-page-mainpic {
     width: 100%;
     height: 300px;
-    background: #999;
+    background: #eee;
     position: relative;
   }
 }
@@ -215,8 +215,8 @@
 }
 
 .contragent-contact-btn {
-  background: rgb(128,179,136);
-  border: solid 1px rgb(128,179,136);
+  background: rgb(128,179,136) !important;
+  border: solid 1px rgb(128,179,136) !important;
   justify-content: center;
 }
 

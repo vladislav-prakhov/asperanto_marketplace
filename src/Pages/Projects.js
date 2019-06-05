@@ -190,8 +190,7 @@ export class Projects extends Component {
                                     <div className="body-projects-company">
                                         <div className="body-projects-company-logo-container">
                                             <div className="body-projects-company-logo">
-                                                <img
-                                                    src={organization.avatar}></img>
+                                                <img src={organization.avatar}/>
                                             </div>
                                         </div>
                                         <div className="body-projects-company-info">
@@ -200,6 +199,7 @@ export class Projects extends Component {
                                         </div>
                                     </div>
                                 </div>
+
                                 <div className="body-projects-add-one-block">
                                     <a onClick={(e) => {
                                         this.CreateProjectOpenModal()
@@ -295,7 +295,7 @@ export class Projects extends Component {
                                     </div>
                                     <div className="body-projects-subprojects-box">
                                         {project.subprojects.map((subproject, subproject_index) => (
-                                            <Link to={"/subproject"} key={'subproject_link_'
+                                            <Link to={"/subproject/" + subproject._id} key={'subproject_link_'
                                             + project_index + '_sub' + subproject_index}>
                                                 <div className="body-projects-one-subproject-box" key={'subproject_'
                                                 + project_index + '_sub' + subproject_index}>

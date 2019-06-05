@@ -14,6 +14,9 @@ import {ProductOrService} from "../Pages/ProductOrService";
 import {Subproject} from "../Pages/Subproject";
 import {PageNotFound} from "../Pages/PageNotFound";
 import {Conversation} from "../Pages/Conversation";
+import {Categories} from "../Pages/Categories";
+import {Header} from "./Header";
+import {Footer} from "./Footer";
 
 
 export class Main extends Component {
@@ -21,39 +24,38 @@ export class Main extends Component {
         super(props);
     }
 
+
+
+
     render() {
-        let search;
-
-        if (this.props.state.searchBox.activated)
-            search = <Search state={this.props.state} getAddInfo={this.props.getAddInfo}/>;
-        else
-            search = null;
-
-
-
-
-
+        console.log(this.props.organization);
         return (
             <main className="main">
-                {search}
-
+                {/*{search}*/}
+                {/*<Header/>*/}
                 <Switch>
                     <Route exact path={'/'} component={Home}/>
-                    <Route exact path={'/categories'} component={Category}/>
+                    <Route exact path={'/categories'} component={Categories}/>
                     <Route exact path={'/organization/:orgUrlName'} component={Organization}/>
                     <Route path={'/suggestions'} component={Suggestions}/>
                     <Route exact path={'/auth'} component={Authentication}/>
                     <Route exact path={'/register'} component={Registration}/>
-                    <Route exact path={'/products'} component={Products}/>
+                    <Route exact path={'/products'} render={(props) => <Products {...props}
+                                                     searchFieldValue={this.props.searchFieldValue} />}/>
                     <Route exact path={'/projects'} component={Projects}/>
                     <Route exact path={'/chat'} component={Conversation}/>
-                    <Route exact path={'/subproject'} component={Subproject}/>
-                    <Route exact path={'/products/:productId'} component={ProductOrService}/>
-                    <Route exact path={'/services/:serviceId'} component={ProductOrService}/>
+                    <Route exact path={'/subproject/:subprojectId'} component={Subproject}/>
+                    {this.props.organization &&
+                    <Route exact path={'/products/:productId'}
+                        render={(props) => <ProductOrService {...props}
+                        organization={this.props.organization} />}/>
+                    }
+                    {this.props.organization &&
+                    <Route exact path={'/services/:serviceId'}
+                        render={(props) => <ProductOrService {...props}
+                        organization={this.props.organization} />}/>
+                    }
                     {/*<Route path={'/developments/:developmentId'} component={ProductOrService}/>*/}
-
-
-
                     {/*Category Routes*/}
                     <Route path={'/categories/mining'} component={Category}/>
                     <Route path={'/categories/oil-gas'} component={Category}/>
@@ -66,7 +68,7 @@ export class Main extends Component {
                     <Route path='*' component={PageNotFound}/>
 
                 </Switch>
-
+                {/*<Footer/>*/}
             </main>
         )}
 }
